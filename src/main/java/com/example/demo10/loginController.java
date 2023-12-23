@@ -1,5 +1,6 @@
 package com.example.demo10;
 
+import DataBase_Classes.DataBaseConnection;
 import DataBase_Classes.LoginValidation;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -11,8 +12,6 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.Statement;
 
 public class loginController {
 

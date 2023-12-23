@@ -1,4 +1,4 @@
-package com.example.demo10;
+package DataBase_Classes;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

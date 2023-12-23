@@ -1,8 +1,6 @@
 package DataBase_Classes;
 
 
-import com.example.demo10.DataBaseConnection;
-
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;

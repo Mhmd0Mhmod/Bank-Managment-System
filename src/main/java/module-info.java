@@ -8,4 +8,6 @@ module com.example.demo10 {
 
     opens com.example.demo10 to javafx.fxml;
     exports com.example.demo10;
+    exports DataBase_Classes;
+    opens DataBase_Classes to javafx.fxml;
 }
