@@ -7,10 +7,11 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
+import java.sql.SQLException;
 
 
 public class signUpController {
-    ObservableList<String> currencies= FXCollections.observableArrayList("USD","EGP","EUR","KWD");
+    ObservableList<String> currencies = FXCollections.observableArrayList("USD", "EGP", "EUR", "KWD");
     @FXML
     private ComboBox<String> currencyComboBox;
     @FXML
@@ -20,21 +21,20 @@ public class signUpController {
     @FXML
     private PasswordField passwordTextField;
     @FXML
-    private RadioButton maleRadioButton;
-    @FXML
-    private RadioButton femaleRadioButton;
     private ToggleGroup gender;
     @FXML
     private RadioButton privaryRadioButton;
-    @FXML
-    private Button registerButton;
-    public void initialize(){
+
+    public void initialize() {
         currencyComboBox.setItems(currencies);
     }
-    public void registerButtonOnAction(ActionEvent event){
-//        InsertUser insertUser = new InsertUser(usernameTextField.getText(),emailTextField.getText(),passwordTextField.getText()
-//        ,currencyComboBox.getValue(),);
-        System.out.println(gender.getSelectedToggle());
+
+    public void registerButtonOnAction(ActionEvent event) throws SQLException {
+        System.out.println(usernameTextField.getText());
+        RadioButton radioButton = (RadioButton) gender.getSelectedToggle();
+        InsertUser insertUser = new InsertUser(usernameTextField.getText(), emailTextField.getText(), passwordTextField.getText()
+                , currencyComboBox.getValue(), radioButton.getText());
+        insertUser.checkValidation();
     }
 
 }
