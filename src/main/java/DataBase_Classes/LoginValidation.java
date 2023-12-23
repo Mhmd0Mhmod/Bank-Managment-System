@@ -14,7 +14,6 @@ public class LoginValidation {
     public LoginValidation(String username, String password) {
         this.username = username;
         this.password = password;
-        checkLogin();
     }
 
     public boolean checkLogin() {
