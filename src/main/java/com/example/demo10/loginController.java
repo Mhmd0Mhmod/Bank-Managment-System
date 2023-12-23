@@ -10,6 +10,8 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
 
 public class loginController {
 
@@ -33,9 +35,7 @@ public class loginController {
             loginMessage.setText("Please, Enter both email and password");
         }
         else {
-            if (validateLogin()){
-
-            }
+           validateLogin();
         }
     }
     public void signUpButtonOnAction (ActionEvent event) throws IOException {
@@ -48,11 +48,22 @@ public class loginController {
         stage.setScene(signUpScene);
         stage.show();
     }
-    public boolean validateLogin(){
+    public void validateLogin(){
         DataBaseConnection connection=new DataBaseConnection();
         Connection connectDB=connection.getConnection();
         String verifyLogin="SELECT count(1) FROM users WHERE username='" +usernameTextField.getText()  +"' AND  hashed_password = ' " + passwordField.getText()+ "'";
-
+        try{
+            Statement statement = connectDB.createStatement();
+            ResultSet result= statement.executeQuery(verifyLogin);
+            while (result.next()){
+                if (result.getInt(1)==1){
+                    loginMessage.setText("Login Successful");
+                }
+                loginMessage.setText("Invalid Login. Please try again!");
+            }
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
     }
 
 }
