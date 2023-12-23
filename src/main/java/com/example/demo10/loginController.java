@@ -51,15 +51,15 @@ public class loginController {
     public void validateLogin(){
         DataBaseConnection connection=new DataBaseConnection();
         Connection connectDB=connection.getConnection();
-        String verifyLogin="SELECT count(1) FROM users WHERE username='" +usernameTextField.getText()  +"' AND  hashed_password = ' " + passwordField.getText()+ "'";
+        String verifyLogin="SELECT COUNT(*) AS count FROM users WHERE username='" +usernameTextField.getText()  +"' AND hashed_password = '" + passwordField.getText()+ "';";
         try{
             Statement statement = connectDB.createStatement();
             ResultSet result= statement.executeQuery(verifyLogin);
             while (result.next()){
-                if (result.getInt(1)==1){
+                if (result.getInt("count")==1){
                     loginMessage.setText("Login Successful");
                 }
-                loginMessage.setText("Invalid Login. Please try again!");
+                else loginMessage.setText("Invalid Login. Please try again!");
             }
         }catch (Exception ex){
             ex.printStackTrace();
