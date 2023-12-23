@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo10.signUpController">
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #383669;" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="82.0" layoutY="87.0" prefHeight="20.0" prefWidth="54.0" text="Email" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="79.0" layoutY="162.0" text="Password" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="80.0" layoutY="123.0" text="Username" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="66.0" layoutY="160.0" textFill="#3032a1">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="81.0" layoutY="204.0" text="Currency" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="196.0" layoutY="35.0" prefHeight="28.0" prefWidth="236.0" text="Enter your bank details :)" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="19.0" />
+               </font>
+            </Label>
+            <TextField layoutX="167.0" layoutY="82.0" />
+            <TextField layoutX="167.0" layoutY="121.0" />
+            <ImageView fitHeight="27.0" fitWidth="24.0" layoutX="52.0" layoutY="84.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Icons/gmail.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="27.0" fitWidth="46.0" layoutX="52.0" layoutY="120.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Icons/username.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="25.0" fitWidth="27.0" layoutX="51.0" layoutY="159.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Icons/password.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="51.0" layoutY="201.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Icons/currency.png" />
+               </image>
+            </ImageView>
+            <PasswordField layoutX="168.0" layoutY="160.0" />
+            <RadioButton layoutX="168.0" layoutY="250.0" mnemonicParsing="false" text="Male" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </RadioButton>
+            <RadioButton layoutX="243.0" layoutY="250.0" mnemonicParsing="false" text="Female" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </RadioButton>
+            <Label layoutX="81.0" layoutY="249.0" text="Gender" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="51.0" layoutY="246.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Icons/gender.png" />
+               </image>
+            </ImageView>
+            <ComboBox fx:id="currencyComboBox" layoutX="168.0" layoutY="202.0" prefWidth="150.0" promptText="Select Currency" />
+            <Button layoutX="72.0" layoutY="321.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="403.0" style="-fx-background-color: #FFFFFF;" text="Register" textFill="#383669">
+               <font>
+                  <Font name="System Bold Italic" size="16.0" />
+               </font>
+            </Button>
+            <RadioButton layoutX="62.0" layoutY="285.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="526.0" text="I have read the Terms and Conditions and Privacy Policy and agree to them" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </RadioButton>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
