@@ -1,6 +1,5 @@
 package DataBase_Classes;
 
-import com.example.demo10.DataBaseConnection;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
@@ -51,10 +50,11 @@ public class InsertUser {
     public void checkValidation() throws SQLException {
     if (checkUsername() && checkEmail()){
         Statement statement = connectionDB.createStatement();
-        String insertUser = "INSERT INTO users (username, email, hashed_password, currency, gender)" +
+        String insertUser = "INSERT INTO users (username, email, hashed_password, currency, gender,role)" +
                 "VALUES" +
-                "  ('"+ username + "','" + email + "','" + password + "','" + currency + "','" + gender + "');";
-        ResultSet result = statement.executeQuery(insertUser);
+                "  ('"+ username + "','" + email + "','" + password + "','" + currency + "','" + gender + "'," + "'user');";
+        statement.executeUpdate(insertUser);
+
     }
     }
 
