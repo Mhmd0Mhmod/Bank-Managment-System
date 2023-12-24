@@ -34,12 +34,10 @@ public class LoginValidation {
                     this.gender = result.getString("gender");
                     this.role = result.getString("role");
                     return new User(username, email, password, currency, gender, role);
-
                 } else {
                     return null;
                 }
             }
-
         } catch (Exception ex) {
             ex.printStackTrace();
         }

@@ -13,9 +13,9 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="416.0" prefWidth="609.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo10.signUpController">
-   <center>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #383669;" BorderPane.alignment="CENTER">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo10.signUpController">
+   <bottom>
+      <AnchorPane prefHeight="421.0" prefWidth="684.0" style="-fx-background-color: #383669;" BorderPane.alignment="CENTER">
          <children>
             <Label fx:id="uniqueEmailLabel" layoutX="204.0" layoutY="109.0" prefHeight="18.0" prefWidth="118.0" textFill="#ff0d0d" />
             <Label layoutX="82.0" layoutY="87.0" prefHeight="20.0" prefWidth="54.0" text="Email" textFill="WHITE">
@@ -95,7 +95,7 @@
                </image>
             </ImageView>
             <ComboBox fx:id="currencyComboBox" layoutX="168.0" layoutY="207.0" prefWidth="150.0" promptText="Select Currency" />
-            <Button fx:id="registerButton" layoutX="72.0" layoutY="340.0" mnemonicParsing="false" onAction="#registerButtonOnAction" prefHeight="37.0" prefWidth="403.0" style="-fx-background-color: #FFFFFF;" text="Register" textFill="#383669">
+            <Button fx:id="registerButton" layoutX="42.0" layoutY="334.0" mnemonicParsing="false" onAction="#registerButtonOnAction" prefHeight="37.0" prefWidth="403.0" style="-fx-background-color: #FFFFFF;" text="Register" textFill="#383669">
                <font>
                   <Font name="System Bold Italic" size="16.0" />
                </font>
@@ -113,7 +113,12 @@
                   <Font name="System Bold" size="13.0" />
                </font>
             </Label>
+            <Button layoutX="466.0" layoutY="334.0" mnemonicParsing="false" onAction="#backToLgoin" prefHeight="37.0" prefWidth="167.0" style="-fx-background-color: white;" text="Back Login" textFill="#383669">
+               <font>
+                  <Font name="System Bold Italic" size="16.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
-   </center>
+   </bottom>
 </BorderPane>

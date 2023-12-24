@@ -6,12 +6,13 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="524.0" prefWidth="846.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo10.DashboardController">
    <left>
-      <AnchorPane prefHeight="395.0" prefWidth="232.0" style="-fx-background-color: #383669;" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="524.0" prefWidth="244.0" style="-fx-background-color: #383669;" BorderPane.alignment="CENTER">
          <children>
             <ImageView fitHeight="56.0" fitWidth="56.0" layoutX="9.0" layoutY="27.0">
                <image>
@@ -23,7 +24,7 @@
                   <Font name="Ah-Al_Kofi" size="20.0" />
                </font>
             </Text>
-            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="71.0" layoutY="130.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: black;" text="Dashboard" textAlignment="JUSTIFY" textFill="#383669" textOverrun="CENTER_ELLIPSIS">
+            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="71.0" layoutY="130.0" mnemonicParsing="false" onAction="#dashboard" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: black;" text="Dashboard" textAlignment="JUSTIFY" textFill="#383669" textOverrun="CENTER_ELLIPSIS">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -36,7 +37,7 @@
                   <Image url="@../../../Icons/dashboard.png" />
                </image>
             </ImageView>
-            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="71.0" layoutY="190.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: black;" text="Transaction" textAlignment="JUSTIFY" textFill="#383669" textOverrun="CENTER_ELLIPSIS">
+            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="71.0" layoutY="190.0" mnemonicParsing="false" onAction="#transation" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: black;" text="Transaction" textAlignment="JUSTIFY" textFill="#383669" textOverrun="CENTER_ELLIPSIS">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -49,7 +50,7 @@
                   <Image url="@../../../Icons/transaction.png" />
                </image>
             </ImageView>
-            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="71.0" layoutY="250.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: black;" text="Change Currency" textAlignment="JUSTIFY" textFill="#383669" textOverrun="CENTER_ELLIPSIS">
+            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="71.0" layoutY="250.0" mnemonicParsing="false" onAction="#changeCurrency" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: black;" text="Change Currency" textAlignment="JUSTIFY" textFill="#383669" textOverrun="CENTER_ELLIPSIS">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -62,7 +63,7 @@
                   <Image url="@../../../Icons/change.png" />
                </image>
             </ImageView>
-            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="71.0" layoutY="310.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: black;" text="Account data" textAlignment="JUSTIFY" textFill="#383669" textOverrun="CENTER_ELLIPSIS">
+            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="71.0" layoutY="310.0" mnemonicParsing="false" onAction="#accountData" pickOnBounds="false" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: black;" text="Account data" textAlignment="JUSTIFY" textFill="#383669" textOverrun="CENTER_ELLIPSIS">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -78,14 +79,37 @@
          </children>
       </AnchorPane>
    </left>
-   <right>
-      <AnchorPane prefHeight="524.0" prefWidth="617.0" style="-fx-background-color: #f0f0f0;" BorderPane.alignment="CENTER">
+   <center>
+      <AnchorPane>
          <children>
-            <Text fontSmoothingType="LCD" layoutX="14.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WELCOME" textAlignment="CENTER" wrappingWidth="385.9310240589083">
-               <font>
-                  <Font name="AdobeArabic-Regular" size="25.0" />
-               </font>
-            </Text>
-         </children></AnchorPane>
-   </right>
+            <Pane fx:id="MainPane" prefHeight="524.0" prefWidth="621.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Pane fx:id="layerFour" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="524.0" prefWidth="621.0" style="-fx-background-color: white;">
+                     <children>
+                        <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Account Data" wrappingWidth="177.13671875" />
+                     </children>
+                  </Pane>
+                  <Pane fx:id="layerThree" prefHeight="524.0" prefWidth="620.0" style="-fx-background-color: white;">
+                     <children>
+                        <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Change Currency" wrappingWidth="170.7265625" />
+                     </children>
+                  </Pane>
+                  <Pane fx:id="layerTwo" prefHeight="524.0" prefWidth="622.0" style="-fx-background-color: white;">
+                     <children>
+                        <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Transaction" wrappingWidth="164.13671875" />
+                     </children>
+                  </Pane>
+                  <Pane fx:id="layerOne" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="524.0" prefWidth="616.0" style="-fx-background-color: white;">
+                     <children>
+                        <Text fx:id="welcomeText" fill="#19409c" layoutX="14.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome" wrappingWidth="401.13671875">
+                           <font>
+                              <Font name="System Bold Italic" size="29.0" />
+                           </font></Text>
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+   </center>
 </BorderPane>
