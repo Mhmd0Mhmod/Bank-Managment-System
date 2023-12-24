@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.Cursor?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="524.0" prefWidth="846.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo10.DashboardController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="524.0" prefWidth="846.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo10.DashboardController">
    <left>
       <AnchorPane prefHeight="524.0" prefWidth="244.0" style="-fx-background-color: #383669;" BorderPane.alignment="CENTER">
          <children>
@@ -76,6 +72,14 @@
                   <Image url="@../../../Icons/account.png" />
                </image>
             </ImageView>
+            <Button fx:id="logOut" alignment="CENTER" contentDisplay="CENTER" layoutX="47.0" layoutY="473.0" mnemonicParsing="false" onAction="#doLogout" pickOnBounds="false" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: black;" text="Log Out" textAlignment="JUSTIFY" textFill="#383669" textOverrun="CENTER_ELLIPSIS">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
    </left>
@@ -86,7 +90,65 @@
                <children>
                   <Pane fx:id="layerFour" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="524.0" prefWidth="621.0" style="-fx-background-color: white;">
                      <children>
-                        <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Account Data" wrappingWidth="177.13671875" />
+                        <GridPane hgap="10.0" vgap="40.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="597.0" minWidth="10.0" prefWidth="167.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="500.0" minWidth="10.0" prefWidth="407.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="500.0" minWidth="0.0" prefWidth="48.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints maxHeight="170.0" minHeight="0.0" prefHeight="58.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="422.0" minHeight="0.0" prefHeight="31.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="424.0" minHeight="10.0" prefHeight="32.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="424.0" minHeight="10.0" prefHeight="36.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="424.0" minHeight="10.0" prefHeight="37.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="424.0" minHeight="0.0" prefHeight="57.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="424.0" minHeight="10.0" prefHeight="53.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label text="Username : " textFill="#383669" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Email : " textFill="#383669" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Password :" textFill="#383669" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Currency :" textFill="#383669" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label prefHeight="17.0" prefWidth="166.0" text="Your Data" textFill="#383669" GridPane.halignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                              </Label>
+                              <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" pickOnBounds="false" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: black;" text="Update" textAlignment="JUSTIFY" textFill="#383669" textOverrun="CENTER_ELLIPSIS" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Button>
+                              <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" pickOnBounds="false" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: black;" text="Delete My Account" textAlignment="JUSTIFY" textFill="#383669" textOverrun="CENTER_ELLIPSIS" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="5">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </GridPane>
                      </children>
                   </Pane>
                   <Pane fx:id="layerThree" prefHeight="524.0" prefWidth="620.0" style="-fx-background-color: white;">
@@ -99,7 +161,7 @@
                         <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Transaction" wrappingWidth="164.13671875" />
                      </children>
                   </Pane>
-                  <Pane fx:id="layerOne" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="524.0" prefWidth="616.0" style="-fx-background-color: white;">
+                  <Pane fx:id="layerOne" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="524.0" prefWidth="604.0" style="-fx-background-color: white;">
                      <children>
                         <Text fx:id="welcomeText" fill="#19409c" layoutX="14.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome" wrappingWidth="401.13671875">
                            <font>

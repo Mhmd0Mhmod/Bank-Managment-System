@@ -6,14 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="2b5edb77-daa6-4f7c-8a6b-cead86c5c33c" name="Changes" comment="new Update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DataBase_Classes/InsertUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataBase_Classes/InsertUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DataBase_Classes/LoginValidation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataBase_Classes/LoginValidation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo10/DashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo10/DashboardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo10/LoadScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo10/LoadScene.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo10/loginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo10/loginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo10/signUpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo10/signUpController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/demo10/dashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/demo10/dashboard.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/demo10/signup.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/demo10/signup.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +60,7 @@
     </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="oozoo" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -76,7 +70,9 @@
     <setting file="file://$PROJECT_DIR$/src/main/java/DataBase_Classes/DataBaseConnection.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/main/java/DataBase_Classes/InsertUser.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/main/java/DataBase_Classes/LoginValidation.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/DataBase_Classes/User.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/main/java/com/example/demo10/DashboardController.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/example/demo10/LoadScene.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/main/java/com/example/demo10/loginController.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/main/java/com/example/demo10/signUpController.java" root0="SKIP_INSPECTION" />
   </component>
@@ -184,6 +180,11 @@
       <workItem from="1703442346752" duration="1129000" />
       <workItem from="1703443503014" duration="7556000" />
       <workItem from="1703451849414" duration="3045000" />
+      <workItem from="1703455442957" duration="325000" />
+      <workItem from="1703456025991" duration="1586000" />
+      <workItem from="1703458185339" duration="292000" />
+      <workItem from="1703458570713" duration="897000" />
+      <workItem from="1703459488042" duration="1243000" />
     </task>
     <task id="LOCAL-00001" summary="Update done">
       <option name="closed" value="true" />
@@ -263,5 +264,15 @@
     <MESSAGE value="DashBoard Connection" />
     <MESSAGE value="new Update" />
     <option name="LAST_COMMIT_MESSAGE" value="new Update" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.ClassNotFoundException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
