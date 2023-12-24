@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="395.0" prefWidth="609.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo10.DashboardController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="524.0" prefWidth="846.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo10.DashboardController">
    <left>
       <AnchorPane prefHeight="395.0" prefWidth="232.0" style="-fx-background-color: #383669;" BorderPane.alignment="CENTER">
          <children>
@@ -79,9 +79,9 @@
       </AnchorPane>
    </left>
    <right>
-      <AnchorPane prefHeight="395.0" prefWidth="462.0" style="-fx-background-color: #f0f0f0;" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="524.0" prefWidth="617.0" style="-fx-background-color: #f0f0f0;" BorderPane.alignment="CENTER">
          <children>
-            <Text fontSmoothingType="LCD" layoutX="14.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WELCOME" textAlignment="CENTER" wrappingWidth="94.73101185187704">
+            <Text fontSmoothingType="LCD" layoutX="14.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WELCOME" textAlignment="CENTER" wrappingWidth="385.9310240589083">
                <font>
                   <Font name="AdobeArabic-Regular" size="25.0" />
                </font>

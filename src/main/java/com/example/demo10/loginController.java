@@ -51,9 +51,7 @@ public class loginController {
     public void signUpButtonOnAction(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("signup.fxml"));
         Scene signUpScene = new Scene(fxmlLoader.load());
-
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-
         // Set and show the secondary scene on the current stage
         stage.setScene(signUpScene);
         stage.show();

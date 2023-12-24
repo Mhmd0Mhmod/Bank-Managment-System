@@ -23,7 +23,6 @@ public class LoginValidation {
             ResultSet result = statement.executeQuery(verifyLogin);
             while (result.next()) {
                 if (result.getInt("count") == 1) {
-
                     return true;
 
                 } else {
