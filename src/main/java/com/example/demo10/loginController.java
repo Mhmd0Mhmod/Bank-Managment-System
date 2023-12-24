@@ -32,23 +32,30 @@ public class loginController {
         stage.close();
     }
 
-    public void loginButtonOnAction(ActionEvent e) throws IOException {
+    public void loginButtonOnAction(ActionEvent event) throws IOException {
         if (passwordField.getText().isBlank() || usernameTextField.getText().isBlank()) {
             loginMessage.setText("Please, Enter both email and password");
         } else {
-            validateLogin(e);
+            validateLogin(event);
         }
     }
 
     public void signUpButtonOnAction(ActionEvent event) throws IOException {
-        new LoadScene("signup.fxml", ((Node) event.getSource()).getScene()).createScene();
+        new LoadScene("signup.fxml",event).createScene();
     }
 
     public void validateLogin(ActionEvent event) throws IOException {
         LoginValidation loginValidation = new LoginValidation(usernameTextField.getText(), passwordField.getText());
         User user = loginValidation.checkLogin();
-        if (user != null) {
-            new LoadScene("dashboard.fxml",((Node) event.getSource()).getScene(),user).createScene();
+        if (user!=null) {
+            loginMessage.setText("Login Successful");
+            System.out.println(((Node)event.getSource()).getScene());
+//            LoadScene loadScene=new LoadScene("dashboard.fxml",event);
+//            try {
+//                loadScene.createScene();
+//            } catch (IOException e) {
+//                throw new RuntimeException(e);
+//            }
         } else {
             loginMessage.setText("Invalid Login. Please try again!");
         }
