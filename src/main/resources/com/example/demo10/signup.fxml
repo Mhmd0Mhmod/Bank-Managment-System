@@ -6,12 +6,12 @@
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
-
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo10.signUpController">
    <center>
@@ -74,8 +74,11 @@
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
+               <toggleGroup>
+                  <ToggleGroup fx:id="gender" />
+               </toggleGroup>
             </RadioButton>
-            <RadioButton layoutX="243.0" layoutY="250.0" mnemonicParsing="false" text="Female" textFill="WHITE">
+            <RadioButton layoutX="243.0" layoutY="250.0" mnemonicParsing="false" selected="true" text="Female" textFill="WHITE" toggleGroup="$gender">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
@@ -91,7 +94,7 @@
                </image>
             </ImageView>
             <ComboBox fx:id="currencyComboBox" layoutX="168.0" layoutY="202.0" prefWidth="150.0" promptText="Select Currency" />
-            <Button layoutX="72.0" layoutY="321.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="403.0" style="-fx-background-color: #FFFFFF;" text="Register" textFill="#383669">
+            <Button layoutX="72.0" layoutY="321.0" mnemonicParsing="false" onAction="#registerButtonOnAction" prefHeight="37.0" prefWidth="403.0" style="-fx-background-color: #FFFFFF;" text="Register" textFill="#383669">
                <font>
                   <Font name="System Bold Italic" size="16.0" />
                </font>
