@@ -6,8 +6,11 @@ import javafx.scene.control.*;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-
+import com.example.demo10.signUpController;
 public class InsertUser {
+    @FXML
+    private Label uniqueEmailLabel;
+
     private DataBaseConnection Connection = new DataBaseConnection();
     private java.sql.Connection connectionDB = Connection.getConnection();
     private String username,email,password,currency,gender;
@@ -37,11 +40,15 @@ public class InsertUser {
         ResultSet result = statement.executeQuery(verifyEmail);
             while (result.next()) {
                 if (result.getInt("count") == 1) {
+//                    uniqueEmailLabel.setText("This email is already registered");
                     return false;
                 } else {
+
                     return true;
                 }
             }
+
+//        uniqueEmailLabel.setText("This email is already registered");
         return false;
     }
 //    public boolean checkPrivacy (){

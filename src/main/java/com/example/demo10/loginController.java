@@ -14,8 +14,6 @@ import java.io.IOException;
 import java.sql.Connection;
 
 public class loginController {
-
-
     @FXML
     private Button cancelButton;
     @FXML
@@ -32,17 +30,27 @@ public class loginController {
         stage.close();
     }
 
-    public void loginButtonOnAction(ActionEvent event) {
+    public void loginButtonOnAction(ActionEvent event) throws IOException {
         if (passwordField.getText().isBlank() || usernameTextField.getText().isBlank()) {
             loginMessage.setText("Please, Enter both email and password");
         } else {
-            validateLogin();
+           if( validateLogin()) {
+               // Dashboard
+               FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("dashboard.fxml"));
+               Scene signUpScene = new Scene(fxmlLoader.load());
+               Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+               // Set and show the secondary scene on the current stage
+               stage.setScene(signUpScene);
+               stage.show();
+           }else {
+               loginMessage.setText("Invalid Login. Please try again!");
+           }
         }
     }
 
     public void signUpButtonOnAction(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("signup.fxml"));
-        Scene signUpScene = new Scene(fxmlLoader.load(), 591, 362);
+        Scene signUpScene = new Scene(fxmlLoader.load());
 
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
@@ -51,14 +59,14 @@ public class loginController {
         stage.show();
     }
 
-    public void validateLogin() {
+    public boolean validateLogin() {
         DataBaseConnection connection = new DataBaseConnection();
         Connection connectDB = connection.getConnection();
         LoginValidation loginValidation = new LoginValidation(usernameTextField.getText(), passwordField.getText());
         if (loginValidation.checkLogin()) {
-            loginMessage.setText("Login Successful");
+            return true;
         } else {
-            loginMessage.setText("Invalid Login. Please try again!");
+            return false;
         }
     }
 

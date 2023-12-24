@@ -35,7 +35,6 @@ public class signUpController {
         System.out.println(emailTextField.getText());
         RadioButton gen= (RadioButton)gender.getSelectedToggle();
         RadioButton term=(RadioButton)terms.getSelectedToggle();
-        System.out.println(term);
         if (term==null) termsLabel.setText("You should accept our Terms first.");
         else {
             termsLabel.setText("You have successfully register :)");
