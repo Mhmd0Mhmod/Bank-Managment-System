@@ -94,16 +94,24 @@
                </image>
             </ImageView>
             <ComboBox fx:id="currencyComboBox" layoutX="168.0" layoutY="202.0" prefWidth="150.0" promptText="Select Currency" />
-            <Button fx:id="registerButton" layoutX="72.0" layoutY="321.0" mnemonicParsing="false" onAction="#registerButtonOnAction" prefHeight="37.0" prefWidth="403.0" style="-fx-background-color: #FFFFFF;" text="Register" textFill="#383669">
+            <Button fx:id="registerButton" layoutX="72.0" layoutY="335.0" mnemonicParsing="false" onAction="#registerButtonOnAction" prefHeight="37.0" prefWidth="403.0" style="-fx-background-color: #FFFFFF;" text="Register" textFill="#383669">
                <font>
                   <Font name="System Bold Italic" size="16.0" />
                </font>
             </Button>
-            <RadioButton fx:id="privaryRadioButton" layoutX="62.0" layoutY="285.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="526.0" text="I have read the Terms and Conditions and Privacy Policy and agree to them" textFill="WHITE">
+            <RadioButton fx:id="termsRadioButton" layoutX="62.0" layoutY="285.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="526.0" text="I have read the Terms and Conditions and Privacy Policy and agree to them" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
+               <toggleGroup>
+                  <ToggleGroup fx:id="terms" />
+               </toggleGroup>
             </RadioButton>
+            <Label fx:id="termsLabel" layoutX="133.0" layoutY="308.0" prefHeight="18.0" prefWidth="240.0" textFill="#ff0606">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
    </center>

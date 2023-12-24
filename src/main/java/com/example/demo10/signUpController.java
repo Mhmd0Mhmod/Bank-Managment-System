@@ -23,7 +23,9 @@ public class signUpController {
     @FXML
     private ToggleGroup gender;
     @FXML
-    private RadioButton privaryRadioButton;
+    private ToggleGroup terms;
+    @FXML
+    private Label termsLabel;
     @FXML
     private Button registerButton;
     public void initialize(){
@@ -32,9 +34,16 @@ public class signUpController {
     public void registerButtonOnAction(ActionEvent event) throws SQLException {
         System.out.println(emailTextField.getText());
         RadioButton gen= (RadioButton)gender.getSelectedToggle();
-        InsertUser insertUser = new InsertUser(usernameTextField.getText(),emailTextField.getText(),passwordTextField.getText()
-        ,currencyComboBox.getValue(),gen.getText());
-        insertUser.checkValidation();
+        RadioButton term=(RadioButton)terms.getSelectedToggle();
+        System.out.println(term);
+        if (term==null) termsLabel.setText("You should accept our Terms first.");
+        else {
+            termsLabel.setText("You have successfully register :)");
+            InsertUser insertUser = new InsertUser(usernameTextField.getText(), emailTextField.getText(), passwordTextField.getText()
+                    , currencyComboBox.getValue(), gen.getText());
+            insertUser.checkValidation();
+        }
+
     }
 
 }
