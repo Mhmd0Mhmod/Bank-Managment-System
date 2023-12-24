@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="395.0" prefWidth="609.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <left>
+      <AnchorPane prefHeight="395.0" prefWidth="232.0" style="-fx-background-color: #383669;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="56.0" fitWidth="56.0" layoutX="9.0" layoutY="27.0">
+               <image>
+                  <Image url="@../../../Icons/bank.png" />
+               </image>
+            </ImageView>
+            <Text fill="WHITE" fontSmoothingType="LCD" layoutX="66.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Monster          Bank" textAlignment="CENTER" wrappingWidth="160.3310026966036">
+               <font>
+                  <Font name="Ah-Al_Kofi" size="20.0" />
+               </font>
+            </Text>
+            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="71.0" layoutY="130.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: black;" text="Dashboard" textAlignment="JUSTIFY" textFill="#383669" textOverrun="CENTER_ELLIPSIS">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="40.0" fitWidth="45.0" layoutX="16.0" layoutY="125.0">
+               <image>
+                  <Image url="@../../../Icons/dashboard.png" />
+               </image>
+            </ImageView>
+            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="71.0" layoutY="190.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: black;" text="Transaction" textAlignment="JUSTIFY" textFill="#383669" textOverrun="CENTER_ELLIPSIS">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="52.0" fitWidth="45.0" layoutX="16.0" layoutY="180.0">
+               <image>
+                  <Image url="@../../../Icons/transaction.png" />
+               </image>
+            </ImageView>
+            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="71.0" layoutY="250.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: black;" text="Change Currency" textAlignment="JUSTIFY" textFill="#383669" textOverrun="CENTER_ELLIPSIS">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="40.0" fitWidth="45.0" layoutX="16.0" layoutY="240.0">
+               <image>
+                  <Image url="@../../../Icons/change.png" />
+               </image>
+            </ImageView>
+            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="71.0" layoutY="310.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: black;" text="Account data" textAlignment="JUSTIFY" textFill="#383669" textOverrun="CENTER_ELLIPSIS">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="49.0" fitWidth="45.0" layoutX="16.0" layoutY="300.0">
+               <image>
+                  <Image url="@../../../Icons/account.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </left>
+   <right>
+      <AnchorPane prefHeight="395.0" prefWidth="462.0" style="-fx-background-color: #f0f0f0;" BorderPane.alignment="CENTER">
+         <children>
+            <Text fontSmoothingType="LCD" layoutX="14.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WELCOME" textAlignment="CENTER" wrappingWidth="94.73101185187704">
+               <font>
+                  <Font name="AdobeArabic-Regular" size="25.0" />
+               </font>
+            </Text>
+         </children></AnchorPane>
+   </right>
+</BorderPane>

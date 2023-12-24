@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2b5edb77-daa6-4f7c-8a6b-cead86c5c33c" name="Changes" comment="Update done">
-      <change afterPath="$PROJECT_DIR$/src/main/java/DataBase_Classes/LoginValidation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/demo10/dashboard.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo10/loginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo10/loginController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +58,7 @@
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/Coding/demo1/src/main/resources/dataBase/mysql-connector-j-8.2.0.jar",
+    "last_opened_file_path": "C:/Users/yazed2003/Desktop/SceneBuilder.lnk",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -68,6 +67,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.JavaFX",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -76,11 +76,11 @@
       <recent name="com.example.demo10" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\yazed2003\IdeaProjects\demo1\src\main\resources\com\example\demo10" />
       <recent name="C:\Users\Shebo\IdeaProjects\bankist\src\main\resources\dataBase" />
       <recent name="C:\Users\Shebo\IdeaProjects\bankist\src\main\resources" />
       <recent name="C:\Users\Shebo\IdeaProjects\demo10\src\main\resources\Icons" />
       <recent name="C:\Users\Shebo\IdeaProjects\demo10\src\main\resources" />
-      <recent name="C:\Users\Shebo\IdeaProjects\demo10\src\main\resources\com\example\demo10" />
     </key>
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="com.example.demo10" />
@@ -129,6 +129,7 @@
       <workItem from="1703366580539" duration="348000" />
       <workItem from="1703367096128" duration="215000" />
       <workItem from="1703367785835" duration="991000" />
+      <workItem from="1703376618078" duration="704000" />
     </task>
     <task id="LOCAL-00001" summary="Update done">
       <option name="closed" value="true" />
