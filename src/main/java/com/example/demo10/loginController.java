@@ -3,19 +3,14 @@ package com.example.demo10;
 import DataBase_Classes.LoginValidation;
 import DataBase_Classes.User;
 import javafx.event.ActionEvent;
-import javafx.event.Event;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
 public class loginController {
-
-
     @FXML
     private Button cancelButton;
     @FXML
@@ -24,10 +19,9 @@ public class loginController {
     private PasswordField passwordField;
     @FXML
     private TextField usernameTextField;
-    @FXML
-    private Button signUpButton;
 
-    public void cancelButtonOnAction(ActionEvent event) {
+
+    public void cancelButtonOnAction() {
         Stage stage = (Stage) cancelButton.getScene().getWindow();
         stage.close();
     }
@@ -44,13 +38,18 @@ public class loginController {
         new LoadScene("signup.fxml", ((Node) event.getSource()).getScene()).createScene();
     }
 
+    public void aboutTheBankButtonOnAction(ActionEvent event) throws IOException {
+        new LoadScene("signup.fxml", ((Node) event.getSource()).getScene()).createScene();
+    }
+
     public void validateLogin(ActionEvent event) throws IOException {
         LoginValidation loginValidation = new LoginValidation(usernameTextField.getText(), passwordField.getText());
         User user = loginValidation.checkLogin();
         if (user != null) {
             new LoadScene("dashboard.fxml",((Node) event.getSource()).getScene(),user).createScene();
         } else {
-            loginMessage.setText("Invalid Login. Please try again!");
+            loginMessage.setText("Invalid Data. Please try again!");
+
         }
     }
 

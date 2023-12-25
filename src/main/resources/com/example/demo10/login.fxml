@@ -12,16 +12,16 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="395.0" prefWidth="609.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo10.loginController">
    <left>
-      <AnchorPane prefHeight="400.0" prefWidth="282.0" style="-fx-background-color: #383669;" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="395.0" prefWidth="211.0" style="-fx-background-color: #383669; -fx-background-radius: 0px 15px 15px 0px;" BorderPane.alignment="CENTER">
          <children>
-            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="234.0" prefHeight="18.0" prefWidth="253.0" text="Welcome To Monster's Bank" textAlignment="CENTER" textFill="#e7e0e0">
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="45.0" layoutY="249.0" prefHeight="27.0" prefWidth="121.0" text="Monster Bank" textAlignment="CENTER" textFill="#ffaa00">
                <font>
                   <Font name="System Bold Italic" size="18.0" />
                </font>
             </Label>
-            <ImageView fitHeight="178.0" fitWidth="162.0" layoutX="60.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="178.0" fitWidth="162.0" layoutX="25.0" layoutY="63.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../Icons/bank.png" />
+                  <Image url="@../../../Icons/provider%20(1).png" />
                </image>
             </ImageView>
          </children>
@@ -30,45 +30,45 @@
    <center>
       <AnchorPane prefHeight="398.0" prefWidth="337.0" style="-fx-background-color: #f0f0f0;" BorderPane.alignment="CENTER">
          <children>
-            <Label alignment="CENTER" layoutX="13.0" layoutY="74.0" text="Welcome Back," textAlignment="CENTER" textFill="#383669">
+            <Label alignment="CENTER" layoutX="14.0" layoutY="14.0" text="Welcome In Your Bank," textAlignment="CENTER" textFill="#383669">
                <font>
                   <Font name="System Bold Italic" size="22.0" />
                </font>
             </Label>
-            <Label layoutX="18.0" layoutY="158.0" prefHeight="27.0" prefWidth="84.0" text="Username">
+            <Label layoutX="18.0" layoutY="98.0" prefHeight="27.0" prefWidth="84.0" text="Username">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label layoutX="18.0" layoutY="198.0" prefHeight="18.0" prefWidth="63.0" text="Password">
+            <Label layoutX="18.0" layoutY="136.0" prefHeight="18.0" prefWidth="63.0" text="Password">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <TextField fx:id="usernameTextField" layoutX="91.0" layoutY="159.0" prefHeight="26.0" prefWidth="180.0" promptText="Email" />
-            <PasswordField fx:id="passwordField" layoutX="91.0" layoutY="195.0" prefHeight="26.0" prefWidth="180.0" promptText="Password" />
-            <Button fx:id="loginButton" layoutX="9.0" layoutY="253.0" mnemonicParsing="false" onAction="#loginButtonOnAction" prefHeight="26.0" prefWidth="144.0" style="-fx-background-color: #383669;" text="Login" textFill="WHITE">
+            <TextField fx:id="usernameTextField" layoutX="91.0" layoutY="99.0" prefHeight="26.0" prefWidth="238.0" promptText="Email" />
+            <PasswordField fx:id="passwordField" layoutX="91.0" layoutY="133.0" prefHeight="26.0" prefWidth="238.0" promptText="Password" />
+            <Button fx:id="loginButton" layoutX="127.0" layoutY="206.0" mnemonicParsing="false" onAction="#loginButtonOnAction" prefHeight="26.0" prefWidth="144.0" style="-fx-background-color: #383669;" text="Login" textFill="WHITE">
                <font>
                   <Font name="System Bold Italic" size="13.0" />
                </font>
             </Button>
-            <Button fx:id="signUpButton" layoutX="34.0" layoutY="316.0" mnemonicParsing="false" onAction="#signUpButtonOnAction" prefHeight="26.0" prefWidth="250.0" style="-fx-background-color: #383669;" text="Don't have an account? Sign Up Now!" textFill="WHITE">
+            <Button fx:id="signUpButton" layoutX="73.0" layoutY="320.0" mnemonicParsing="false" onAction="#signUpButtonOnAction" prefHeight="26.0" prefWidth="250.0" style="-fx-background-color: #383669;" text="Don't have an account? Sign Up Now!" textFill="WHITE">
                <font>
                   <Font name="System Bold Italic" size="13.0" />
                </font>
             </Button>
-            <Button fx:id="cancelButton" layoutX="163.0" layoutY="253.0" mnemonicParsing="false" onAction="#cancelButtonOnAction" prefHeight="26.0" prefWidth="144.0" style="-fx-background-color: #383669;" text="Cancel Login" textFill="WHITE">
+            <Button fx:id="cancelButton" layoutX="127.0" layoutY="244.0" mnemonicParsing="false" onAction="#cancelButtonOnAction" prefHeight="26.0" prefWidth="144.0" style="-fx-background-color: #383669;" text="Cancel Login" textFill="WHITE">
                <font>
                   <Font name="System Bold Italic" size="13.0" />
                </font>
             </Button>
-            <Label fx:id="loginMessage" alignment="CENTER" layoutX="42.0" layoutY="133.0" prefHeight="18.0" prefWidth="238.0" textFill="#f41616" />
-            <ImageView fitHeight="74.0" fitWidth="96.0" layoutX="102.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../Icons/bank.png" />
-               </image>
-            </ImageView>
-            <Label layoutX="13.0" layoutY="106.0" prefHeight="18.0" prefWidth="143.0" text="Sign in to continue" />
+            <Label fx:id="loginMessage" alignment="CENTER" layoutX="67.0" layoutY="168.0" prefHeight="18.0" prefWidth="286.0" textFill="#f41616" />
+            <Label layoutX="19.0" layoutY="46.0" prefHeight="18.0" prefWidth="143.0" text="Sign in to continue" />
+            <Button fx:id="aboutTheBankButton" layoutX="73.0" layoutY="353.0" mnemonicParsing="false" onAction="#aboutTheBankButtonOnAction" prefHeight="26.0" prefWidth="250.0" style="-fx-background-color: #383669;" text="More about the bank ..." textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
    </center>
