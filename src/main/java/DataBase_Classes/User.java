@@ -8,8 +8,8 @@ public class User {
     private String currency;
     private String gender;
     private String role;
-//    private double balance;
-
+    private double balance;
+    private int id;
 
     public String getUsername() {
         return username;
@@ -59,10 +59,28 @@ public class User {
         this.role = role;
     }
 
-//    public double getBalance() {
-//        return balance;
-//    }
+    public int getId() {
+        return id;
+    }
 
+    public void setBalance(double balance) {
+        this.balance = balance;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+
+    public User(int id,String username, String email, String password, String currency, String gender, String role,double balance) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.email = email;
+        this.currency = currency;
+        this.gender = gender;
+        this.role = role;
+        this.balance = balance;
+    }
     public User(String username, String email, String password, String currency, String gender, String role) {
         this.username = username;
         this.password = password;
@@ -70,5 +88,6 @@ public class User {
         this.currency = currency;
         this.gender = gender;
         this.role = role;
+        this.balance = 0;
     }
 }

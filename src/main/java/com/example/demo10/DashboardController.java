@@ -33,9 +33,9 @@ public class DashboardController {
     @FXML
     private Button loanButton;
     public void loanButtonOnAction(ActionEvent event) throws SQLException {
-        Loan loan=new Loan(currentUser.getUsername(),500,"Personal");
-//        System.out.println(currentUser.getBalance());
-        loan.insertLoan();
+        Loan loan=new Loan(currentUser);
+//        loan.requestLoan(5000,"Personal");
+        loan.payForLoan(250,2);
     }
     public void setCurrentUser(User currentUser) {
         this.currentUser = currentUser;
