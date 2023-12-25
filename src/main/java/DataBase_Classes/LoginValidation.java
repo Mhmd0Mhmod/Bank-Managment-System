@@ -16,6 +16,8 @@ public class LoginValidation {
     private String currency;
     private String gender;
     private String role;
+    private int id;
+    private double balance;
 
     public LoginValidation(String username, String password) {
         this.username = username;
@@ -30,10 +32,12 @@ public class LoginValidation {
             if (result.next()) {
                 if (result.getString("username").equals(username) && result.getString("hashed_password").equals(password)) {
                     this.email = result.getString("email");
+                    this.id=result.getInt("id");
                     this.currency = result.getString("currency");
                     this.gender = result.getString("gender");
                     this.role = result.getString("role");
-                    return new User(username, email, password, currency, gender, role);
+                    this.balance=result.getDouble("balance");
+                    return new User(id,username, email, password, currency, gender, role,balance);
                 } else {
                     return null;
                 }
