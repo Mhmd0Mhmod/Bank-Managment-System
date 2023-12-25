@@ -11,6 +11,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 public class DashboardController {
     private User currentUser;
@@ -29,6 +30,13 @@ public class DashboardController {
     private Pane layerFour;
     @FXML
     private Button logOut;
+    @FXML
+    private Button loanButton;
+    public void loanButtonOnAction(ActionEvent event) throws SQLException {
+        Loan loan=new Loan(currentUser.getUsername(),500,"Personal");
+//        System.out.println(currentUser.getBalance());
+        loan.insertLoan();
+    }
     public void setCurrentUser(User currentUser) {
         this.currentUser = currentUser;
     }

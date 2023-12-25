@@ -2,11 +2,14 @@ package DataBase_Classes;
 
 public class User {
     private String username;
+//    private User currentUser;
     private String password;
     private String email;
     private String currency;
     private String gender;
     private String role;
+//    private double balance;
+
 
     public String getUsername() {
         return username;
@@ -55,6 +58,10 @@ public class User {
     public void setRole(String role) {
         this.role = role;
     }
+
+//    public double getBalance() {
+//        return balance;
+//    }
 
     public User(String username, String email, String password, String currency, String gender, String role) {
         this.username = username;
