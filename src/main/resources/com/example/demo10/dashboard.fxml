@@ -96,7 +96,7 @@
          <children>
             <Pane fx:id="MainPane" prefHeight="524.0" prefWidth="621.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <Pane fx:id="layerFour" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="524.0" prefWidth="621.0" style="-fx-background-color: white;" visible="false">
+                  <Pane fx:id="layerFour" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="524.0" prefWidth="621.0" style="-fx-background-color: white;">
                      <children>
                         <GridPane hgap="10.0" vgap="40.0">
                           <columnConstraints>
@@ -159,7 +159,7 @@
                         </GridPane>
                      </children>
                   </Pane>
-                  <Pane fx:id="layerThree" prefHeight="524.0" prefWidth="620.0" style="-fx-background-color: white;" visible="false">
+                  <Pane fx:id="layerThree" prefHeight="524.0" prefWidth="620.0" style="-fx-background-color: white;">
                      <children>
                         <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Change Currency" wrappingWidth="170.7265625" />
                      </children>
@@ -170,7 +170,7 @@
                         <Button fx:id="loanButton" layoutX="14.0" layoutY="43.0" mnemonicParsing="false" onAction="#loanButtonOnAction" prefHeight="25.0" prefWidth="145.0" text="Loan" />
                      </children>
                   </Pane>
-                  <Pane fx:id="layerOne" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="524.0" prefWidth="604.0" style="-fx-background-color: white;" visible="false">
+                  <Pane fx:id="layerOne" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="524.0" prefWidth="604.0" style="-fx-background-color: white;">
                      <children>
                         <Text fx:id="welcomeText" fill="#19409c" layoutX="14.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome" wrappingWidth="401.13671875">
                            <font>
