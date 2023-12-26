@@ -1,5 +1,6 @@
 package DataBase_Classes;
 
+import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -14,16 +15,13 @@ public class Movement {
     DataBaseConnection dataBaseConnection = new DataBaseConnection();
     Connection connection = dataBaseConnection.getConnection();
 
-    public Movement(double amount, User currentUser, String receiver_name) {
+    public Movement( User currentUser, double amount,String receiver_name) {
         this.amount = amount;
-        this.sender_name = sender_name;
         this.currentUser=currentUser;
+        this.receiver_name=receiver_name;
         this.type = "Transaction";
     }
 
-    public Movement(String sender_name) {
-        this.sender_name = sender_name;
-    }
 
     public void doMovment() throws SQLException {
         Statement statement = connection.createStatement();
@@ -31,25 +29,36 @@ public class Movement {
                 "VALUES" +
                 "  ('" + amount + "','" + type + "','" + currentUser.getUsername() + "','" + receiver_name + "');";
         statement.executeUpdate(insertMovment);
-
-//        double amountExchanged= api();
-        double amountExchanged=1;
+    }
+    public void transferMoney() throws SQLException, IOException {
+        Statement statement = connection.createStatement();
+        String getCurrencySQL="SELECT currency FROM users WHERE username='"+receiver_name+"';";
+        ResultSet result=statement.executeQuery(getCurrencySQL);
+        String receiverCurrency="USD";
+        if(result.next())  receiverCurrency=result.getString("currency");
+        // closing the query to execute another one
+        result.close();
+        currencyChangeAPI api=new currencyChangeAPI();
+        System.out.println(currentUser.getCurrency());
+        Double amountExchanged=api.convertCurrency(currentUser.getCurrency(),receiverCurrency,amount);
         String getOldReceverBalance= "Select balance FROM users WHERE username = '"+ receiver_name + "';";
-        ResultSet result=statement.executeQuery(getOldReceverBalance);
+        result=statement.executeQuery(getOldReceverBalance);
         double oldReceiverBalance=0;
         if(result.next()) {
             oldReceiverBalance =result.getDouble("balance");
         }
-            double newReceiverBalance= oldReceiverBalance+amountExchanged;
-            double newSenderBalance = currentUser.getBalance() - amount;
-            String updateSenderBalance = "UPDATE users SET Balance= '" + newSenderBalance
-                    + "' WHERE username='" + currentUser.getUsername() +"';";
-            String updateReceiverBalance = "UPDATE users SET Balance= '" + newReceiverBalance
+        double newReceiverBalance= oldReceiverBalance+amountExchanged;
+        double newSenderBalance = currentUser.getBalance() - amount;
+        String updateSenderBalance = "UPDATE users SET Balance= '" + newSenderBalance
+                + "' WHERE username='" + currentUser.getUsername() +"';";
+        String updateReceiverBalance = "UPDATE users SET Balance= '" + newReceiverBalance
                 + "' WHERE username='" + receiver_name+"';";
-            statement.executeUpdate(updateReceiverBalance);
-            statement.executeUpdate(updateSenderBalance);
+        statement.executeUpdate(updateReceiverBalance);
+        statement.executeUpdate(updateSenderBalance);
 
+//        System.out.println(amountChanged);
     }
+
 
     public ArrayList<ArrayList<String>> movments() throws SQLException {
         ArrayList<ArrayList<String>> userMovments = null;

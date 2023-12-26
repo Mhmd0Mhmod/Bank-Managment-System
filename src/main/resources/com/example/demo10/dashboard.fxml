@@ -193,7 +193,7 @@
                         <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Change Currency" wrappingWidth="170.7265625" />
                      </children>
                   </Pane>
-                  <Pane fx:id="layerTwo" prefHeight="524.0" prefWidth="622.0" style="-fx-background-color: white;" visible="false">
+                  <Pane fx:id="layerTwo" prefHeight="524.0" prefWidth="622.0" style="-fx-background-color: white;">
                      <children>
                         <Text fill="#383669" layoutX="10.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choose what you want :" wrappingWidth="301.73663330078125">
                            <font>
@@ -251,7 +251,7 @@
                                                 <Font name="System Bold" size="18.0" />
                                              </font>
                                           </Text>
-                                          <TextField fx:id="recieverUserName" layoutX="184.0" layoutY="87.0" promptText="user name" style="-fx-background-color: white; -fx-border-color: black;" />
+                                          <TextField fx:id="receiverUsername" layoutX="184.0" layoutY="87.0" promptText="username" style="-fx-background-color: white; -fx-border-color: black;" />
                                           <Text layoutX="32.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reciever UserName :" wrappingWidth="180.33544921875">
                                              <font>
                                                 <Font size="16.0" />
@@ -263,7 +263,7 @@
                                                 <Font size="16.0" />
                                              </font>
                                           </Text>
-                                          <Button fx:id="transfer" layoutX="195.0" layoutY="241.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="209.0" style="-fx-background-color: #383669;" text="Send Now" textFill="WHITE" />
+                                          <Button fx:id="transferButton" layoutX="195.0" layoutY="241.0" mnemonicParsing="false" onAction="#transferMoney" prefHeight="26.0" prefWidth="209.0" style="-fx-background-color: #383669;" text="Send Now" textFill="WHITE" />
                                           <Label fx:id="transferLabel" layoutX="118.0" layoutY="203.0" prefHeight="18.0" prefWidth="363.0" />
                                        </children>
                                     </AnchorPane>
