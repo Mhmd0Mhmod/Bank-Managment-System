@@ -1,6 +1,7 @@
 package com.example.demo10;
 
 import DataBase_Classes.User;
+import DataBase_Classes.currencyChangeAPI;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -19,7 +20,9 @@ public class HelloApplication extends Application {
         stage.setScene(scene);
         stage.show();
     }
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         launch();
+        currencyChangeAPI api=new currencyChangeAPI();
+        System.out.println(api.sendHttpGETRequest("USD","EGP",50));
     }
 }

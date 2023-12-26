@@ -11,7 +11,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class currencyChangeAPI {
-    public static void sendHttpGETRequest(String fromCurrency, String toCurrency, double amount) throws IOException {
+    public  double sendHttpGETRequest(String fromCurrency, String toCurrency, double amount) throws IOException {
         String url_str = "https://v6.exchangerate-api.com/v6/15fb894408079402d66292c9/latest/USD";
 
 // Making Request
@@ -35,6 +35,6 @@ public class currencyChangeAPI {
 
         // Calculate the converted amount
         double convertedAmount = amount * conversionRate;
-
+        return convertedAmount;
     }
 }
