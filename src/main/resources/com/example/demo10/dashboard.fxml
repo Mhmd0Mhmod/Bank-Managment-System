@@ -242,7 +242,7 @@
                                     </AnchorPane>
                               </content>
                             </Tab>
-                            <Tab fx:id="transfer" text="             Transfer             ">
+                            <Tab fx:id="transferTab" text="transferTab">
                               <content>
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="262.0" prefWidth="599.0">
                                        <children>
@@ -269,7 +269,7 @@
                                     </AnchorPane>
                               </content>
                             </Tab>
-                              <Tab fx:id="deposit" text="             Deposit             ">
+                              <Tab fx:id="depositTab" text="depositTab">
                                  <content>
                                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                        <children>
@@ -285,7 +285,7 @@
                                     </AnchorPane>
                                  </content>
                               </Tab>
-                              <Tab fx:id="withdraw" text="             Withdraw             ">
+                              <Tab fx:id="withdrawTab" text="withdrawTab">
                                  <content>
                                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                        <children>
@@ -305,7 +305,7 @@
                         </TabPane>
                      </children>
                   </Pane>
-                  <Pane fx:id="layerOne" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="524.0" prefWidth="604.0" style="-fx-background-color: white;">
+                  <Pane fx:id="layerOne" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="524.0" prefWidth="604.0" style="-fx-background-color: white;" visible="false">
                      <children>
                         <Text fx:id="welcomeText" fill="#19409c" layoutX="23.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome" wrappingWidth="401.13671875">
                            <font>

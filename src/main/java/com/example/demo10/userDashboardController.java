@@ -1,6 +1,7 @@
 package com.example.demo10;
 
 import DataBase_Classes.*;
+import javafx.beans.binding.Bindings;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -137,6 +138,11 @@ public class userDashboardController {
         Movement movment=new Movement(currentUser,Double.parseDouble(transferAmount.getText()),receiverUsername.getText());
         movment.transferMoney();
     }
+    @FXML
+    private Button loanRequest;
+    @FXML
+    private TextField loanRequestAmount;
+
 
 
 }

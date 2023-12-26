@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2b5edb77-daa6-4f7c-8a6b-cead86c5c33c" name="Changes" comment="new Update">
+    <list default="true" id="2b5edb77-daa6-4f7c-8a6b-cead86c5c33c" name="Changes" comment="currency Change API">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo10/userDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo10/userDashboardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/demo10/dashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/demo10/dashboard.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -332,7 +331,8 @@
     <MESSAGE value="DashBoard Connection" />
     <MESSAGE value="new Update" />
     <MESSAGE value="userdashboard updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="userdashboard updated" />
+    <MESSAGE value="currency Change API" />
+    <option name="LAST_COMMIT_MESSAGE" value="currency Change API" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
