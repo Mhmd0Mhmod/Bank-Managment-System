@@ -199,9 +199,9 @@
                            <font>
                               <Font name="Lucida Handwriting Italic" size="22.0" />
                            </font></Text>
-                        <TabPane layoutX="10.0" layoutY="86.0" prefHeight="391.0" prefWidth="599.0" tabClosingPolicy="UNAVAILABLE">
+                        <TabPane layoutX="10.0" layoutY="84.0" prefHeight="391.0" prefWidth="548.0" tabClosingPolicy="UNAVAILABLE">
                           <tabs>
-                            <Tab fx:id="loan" text="               Loan               ">
+                            <Tab fx:id="loan" text="        Loan        ">
                               <content>
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                        <children>
@@ -242,7 +242,7 @@
                                     </AnchorPane>
                               </content>
                             </Tab>
-                            <Tab fx:id="transferTab" text="transferTab">
+                            <Tab fx:id="transferTab" text="         Transfer        ">
                               <content>
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="262.0" prefWidth="599.0">
                                        <children>
@@ -269,7 +269,7 @@
                                     </AnchorPane>
                               </content>
                             </Tab>
-                              <Tab fx:id="depositTab" text="depositTab">
+                              <Tab fx:id="depositTab" text="         Deposit        ">
                                  <content>
                                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                        <children>
@@ -285,7 +285,7 @@
                                     </AnchorPane>
                                  </content>
                               </Tab>
-                              <Tab fx:id="withdrawTab" text="withdrawTab">
+                              <Tab fx:id="withdrawTab" text="        Withdrawl        ">
                                  <content>
                                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                        <children>
