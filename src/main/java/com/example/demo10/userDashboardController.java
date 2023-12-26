@@ -1,8 +1,7 @@
 package com.example.demo10;
 
-import DataBase_Classes.DataBaseConnection;
-import DataBase_Classes.Loan;
-import DataBase_Classes.User;
+import DataBase_Classes.*;
+import javafx.beans.binding.Bindings;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -36,20 +35,11 @@ public class userDashboardController {
     private Button logOut;
     @FXML
     private Button loanButton;
-    @FXML
-    private TextField usernameTextField;
-    @FXML
-    private TextField emailTextField;
-    @FXML
-    private PasswordField passwordPasswordField;
-    @FXML
-    private ComboBox<String> currencyDropList;
-    @FXML
-    private Label deleteAccountLabel;
-    @FXML
-    private Label gmailLabel;
-    @FXML
-    private Label githubLabel;
+
+
+
+
+
     public void loanButtonOnAction(ActionEvent event) throws SQLException {
         Loan loan=new Loan(currentUser);
 //        loan.requestLoan(5000,"Personal");
@@ -81,6 +71,18 @@ public class userDashboardController {
     public void addOneOnAction(ActionEvent event) throws IOException {
         transation(event);
     }
+    @FXML
+    private Label gmailLabel;
+    @FXML
+    private Label githubLabel;
+    @FXML
+    private TextField usernameTextField;
+    @FXML
+    private TextField emailTextField;
+    @FXML
+    private PasswordField passwordPasswordField;
+    @FXML
+    private ComboBox<String> currencyDropList;
     public void setUserData(){
         this.usernameTextField.setText(currentUser.getUsername());
         this.emailTextField.setText(currentUser.getEmail());
@@ -89,16 +91,18 @@ public class userDashboardController {
         this.githubLabel.setText(currentUser.getUsername());
         this.gmailLabel.setText(currentUser.getEmail());
     }
+    @FXML
+    private Label deleteAccountLabel;
     public void deleteAccount(ActionEvent event) throws SQLException, IOException {
 
-    String checkLoan="SELECT COUNT(*) AS COUNT FROM loans WHERE user_id='"+currentUser.getId()+"';";
+    String checkLoan="SELECT COUNT(*) AS COUNT FROM loans WHERE user_id='"+currentUser.getId()+"' AND remaining!='"+ 0+ "';";
     String delete="delete from users where id='"+currentUser.getId()+"';";
 
     Statement statement = connectionDB.createStatement();
     ResultSet result = statement.executeQuery(checkLoan);
     if (result.next()){
         int numOfLoans=result.getInt("COUNT");
-        if (numOfLoans>0) deleteAccountLabel.setText("You can't delete your account you still need to pay  " + numOfLoans + " loans");
+        if (numOfLoans>0) deleteAccountLabel.setText("You can't delete your account you still need to pay " + numOfLoans + " loans");
         else {
 
             Alert confirmAlert = new Alert(Alert.AlertType.CONFIRMATION);
@@ -126,6 +130,19 @@ public class userDashboardController {
         }
         }
     }
+    @FXML
+    private TextField receiverUsername;
+    @FXML
+    private TextField transferAmount;
+    public void transferMoney() throws IOException, SQLException {
+        Movement movment=new Movement(currentUser,Double.parseDouble(transferAmount.getText()),receiverUsername.getText());
+        movment.transferMoney();
+    }
+    @FXML
+    private Button loanRequest;
+    @FXML
+    private TextField loanRequestAmount;
+
 
 
 }
