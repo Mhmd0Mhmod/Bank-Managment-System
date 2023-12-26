@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2b5edb77-daa6-4f7c-8a6b-cead86c5c33c" name="Changes" comment="AccountDataPane">
+    <list default="true" id="2b5edb77-daa6-4f7c-8a6b-cead86c5c33c" name="Changes" comment="new Update">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo10/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo10/HelloApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo10/loginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo10/loginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo10/signUpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo10/signUpController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/demo10/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/demo10/login.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/demo10/signup.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/demo10/signup.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/demo10/dashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/demo10/dashboard.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,9 +17,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="FxmlFile" />
         <option value="Interface" />
         <option value="JavaFXApplication" />
-        <option value="FxmlFile" />
         <option value="Class" />
       </list>
     </option>
@@ -66,11 +63,7 @@
     <setting file="file://$PROJECT_DIR$/src/main/java/DataBase_Classes/DataBaseConnection.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/main/java/DataBase_Classes/InsertUser.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/main/java/DataBase_Classes/LoginValidation.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/com/example/demo10/SplashScreenController.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/main/java/com/example/demo10/signUpController.java" root0="SKIP_INSPECTION" />
-  </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -166,8 +159,6 @@
       <workItem from="1703404094096" duration="4004000" />
       <workItem from="1703416156907" duration="2616000" />
       <workItem from="1703438394820" duration="684000" />
-      <workItem from="1703540769864" duration="243000" />
-      <workItem from="1703579339184" duration="16182000" />
     </task>
     <task id="LOCAL-00001" summary="Update done">
       <option name="closed" value="true" />
@@ -233,21 +224,7 @@
       <option name="project" value="LOCAL" />
       <updated>1703438479043</updated>
     </task>
-    <task id="LOCAL؜-٠٠٠٠٩" summary="AccountDataPane">
-      <created>1703539365212</created>
-      <option name="number" value="٠٠٠٠٩" />
-      <option name="presentableId" value="LOCAL؜-٠٠٠٠٩" />
-      <option name="project" value="LOCAL؜" />
-      <updated>1703539365212</updated>
-    </task>
-    <task id="LOCAL؜-٠٠٠١٠" summary="AccountDataPane">
-      <created>1703539414017</created>
-      <option name="number" value="٠٠٠١٠" />
-      <option name="presentableId" value="LOCAL؜-٠٠٠١٠" />
-      <option name="project" value="LOCAL؜" />
-      <updated>1703539414017</updated>
-    </task>
-    <option name="localTasksCounter" value="11" />
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -260,7 +237,6 @@
     <MESSAGE value="termsButton" />
     <MESSAGE value="DashBoard Connection" />
     <MESSAGE value="new Update" />
-    <MESSAGE value="AccountDataPane" />
-    <option name="LAST_COMMIT_MESSAGE" value="AccountDataPane" />
+    <option name="LAST_COMMIT_MESSAGE" value="new Update" />
   </component>
 </project>

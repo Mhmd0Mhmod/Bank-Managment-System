@@ -1,4 +1,4 @@
-package com.example.demo10;
+package DataBase_Classes;
 
 import DataBase_Classes.DataBaseConnection;
 import DataBase_Classes.User;
@@ -61,7 +61,6 @@ public class Loan {
                 String updateBalance="UPDATE users SET balance = "+ newBalance + "WHERE id=" + currentUser.getId();
                 statement.executeUpdate(updateRemainingAndPaid);
                 statement.executeUpdate(updateBalance);
-
             }
         else {
             System.out.println("No enough balance");
