@@ -5,15 +5,13 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 
 import java.io.IOException;
 import java.sql.SQLException;
 
-public class DashboardController {
+public class userDashboardController {
     private User currentUser;
     @FXML
     private Text welcomeText;
@@ -42,7 +40,7 @@ public class DashboardController {
     }
 
     public void setWelcomeText() {
-        welcomeText.setText("Welcome " + currentUser.getUsername());
+        welcomeText.setText("Welcome " + currentUser.getUsername()+" ,");
     }
     public void dashboard(ActionEvent event){
         layerOne.toFront();
@@ -58,6 +56,9 @@ public class DashboardController {
     }
     public void doLogout(ActionEvent e) throws IOException {
         new LoadScene("login.fxml",((Node) e.getSource()).getScene()).createScene();
+    }
+    public void addOneOnAction(ActionEvent event) throws IOException {
+        transation(event);
     }
 
 }

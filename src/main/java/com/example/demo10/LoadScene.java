@@ -1,9 +1,7 @@
 package com.example.demo10;
 
 import DataBase_Classes.User;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
@@ -30,7 +28,7 @@ public class LoadScene {
         Scene signUpScene = new Scene(fxmlLoader.load());
         Stage stage = (Stage) scene.getWindow();
         if (resource.equals("dashboard.fxml")) {
-            DashboardController dh = fxmlLoader.getController();
+            userDashboardController dh = fxmlLoader.getController();
             dh.setCurrentUser(user);
             dh.setWelcomeText();
         }

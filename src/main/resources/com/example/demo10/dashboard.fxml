@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -14,7 +19,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="524.0" prefWidth="846.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo10.DashboardController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="524.0" prefWidth="846.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo10.userDashboardController">
    <left>
       <AnchorPane prefHeight="524.0" prefWidth="244.0" style="-fx-background-color: #383669; -fx-background-radius: 0px 15px 15px 0px;" BorderPane.alignment="CENTER">
          <children>
@@ -23,7 +28,7 @@
                   <Image url="@../../../Icons/bank.png" />
                </image>
             </ImageView>
-            <Text fill="WHITE" fontSmoothingType="LCD" layoutX="66.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Monster          Bank" textAlignment="CENTER" wrappingWidth="160.3310026966036">
+            <Text fill="WHITE" fontSmoothingType="LCD" layoutX="70.0" layoutY="65.0" stroke="#ff9900" strokeType="OUTSIDE" strokeWidth="2.0" text="Monster          Bank" textAlignment="CENTER" wrappingWidth="160.3310026966036">
                <font>
                   <Font name="Ah-Al_Kofi" size="20.0" />
                </font>
@@ -96,7 +101,7 @@
          <children>
             <Pane fx:id="MainPane" prefHeight="524.0" prefWidth="621.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <Pane fx:id="layerFour" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="524.0" prefWidth="621.0" style="-fx-background-color: white;">
+                  <Pane fx:id="layerFour" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="524.0" prefWidth="621.0" style="-fx-background-color: white;" visible="false">
                      <children>
                         <Label layoutX="14.0" layoutY="14.0" prefHeight="35.0" prefWidth="140.0" text="Account Data" textFill="#383669">
                            <font>
@@ -177,23 +182,76 @@
                         </ImageView>
                      </children>
                   </Pane>
-                  <Pane fx:id="layerThree" prefHeight="524.0" prefWidth="620.0" style="-fx-background-color: white;" visible="false">
+                  <Pane fx:id="layerThree" prefHeight="524.0" prefWidth="603.0" style="-fx-background-color: white;" visible="false">
                      <children>
                         <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Change Currency" wrappingWidth="170.7265625" />
                      </children>
                   </Pane>
-                  <Pane fx:id="layerTwo" prefHeight="524.0" prefWidth="622.0" style="-fx-background-color: white;" visible="false">
+                  <Pane fx:id="layerTwo" prefHeight="524.0" prefWidth="622.0" style="-fx-background-color: white;">
                      <children>
-                        <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Transaction" wrappingWidth="164.13671875" />
-                        <Button fx:id="loanButton" layoutX="14.0" layoutY="43.0" mnemonicParsing="false" onAction="#loanButtonOnAction" prefHeight="25.0" prefWidth="145.0" text="Loan" />
+                        <Text fill="#383669" layoutX="10.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choose what you want :" wrappingWidth="301.73663330078125">
+                           <font>
+                              <Font name="Lucida Handwriting Italic" size="22.0" />
+                           </font></Text>
+                        <TabPane layoutX="10.0" layoutY="86.0" prefHeight="391.0" prefWidth="599.0" tabClosingPolicy="UNAVAILABLE">
+                          <tabs>
+                            <Tab fx:id="loan" text="               Loan               ">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Text layoutX="14.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="For Loan Request :" wrappingWidth="162.73553466796875">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </AnchorPane>
+                              </content>
+                            </Tab>
+                            <Tab fx:id="transfer" text="             Transfer             ">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                              </content>
+                            </Tab>
+                              <Tab fx:id="deposit" text="             Deposit             ">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                 </content>
+                              </Tab>
+                              <Tab fx:id="withdraw" text="             Withdraw             ">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                 </content>
+                              </Tab>
+                          </tabs>
+                        </TabPane>
                      </children>
                   </Pane>
                   <Pane fx:id="layerOne" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="524.0" prefWidth="604.0" style="-fx-background-color: white;" visible="false">
                      <children>
-                        <Text fx:id="welcomeText" fill="#19409c" layoutX="14.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome" wrappingWidth="401.13671875">
+                        <Text fx:id="welcomeText" fill="#19409c" layoutX="23.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome" wrappingWidth="401.13671875">
                            <font>
                               <Font name="System Bold Italic" size="29.0" />
                            </font></Text>
+                        <TableView fx:id="table1" layoutX="19.0" layoutY="140.0" prefHeight="265.0" prefWidth="579.0" style="-fx-background-color: gray;">
+                          <columns>
+                            <TableColumn prefWidth="176.79998779296875" text="Date" />
+                            <TableColumn prefWidth="95.99993896484375" text="Type" />
+                              <TableColumn prefWidth="94.39996337890625" text="Amount" />
+                              <TableColumn prefWidth="97.5999755859375" text="Sender" />
+                              <TableColumn prefWidth="113.39996337890625" text="Reciever" />
+                          </columns>
+                        </TableView>
+                        <Text fill="#19409c" layoutX="19.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your  transactions  history :">
+                           <font>
+                              <Font name="Adca" size="21.0" />
+                           </font>
+                        </Text>
+                        <Button layoutX="226.0" layoutY="434.0" mnemonicParsing="false" onAction="#addOneOnAction" prefHeight="35.0" prefWidth="152.0" style="-fx-background-color: #383669; -fx-background-radius: 15px 15px 15px 15px;" text="Add new one ..." textFill="WHITE">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                        </Button>
                      </children>
                   </Pane>
                </children>
