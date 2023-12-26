@@ -56,7 +56,6 @@ public class InsertUser {
         } else {
             return true;
         }
-
     }
 
 }

@@ -1,5 +1,7 @@
 package com.example.demo10;
 
+import DataBase_Classes.DataBaseConnection;
+import DataBase_Classes.Loan;
 import DataBase_Classes.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -12,7 +14,9 @@ import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 
 import java.io.IOException;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 public class userDashboardController {
     private User currentUser;
@@ -20,7 +24,8 @@ public class userDashboardController {
     private Text welcomeText;
     @FXML
     private Pane MainPane;
-
+    private final DataBaseConnection Connection = new DataBaseConnection();
+    private final java.sql.Connection connectionDB = Connection.getConnection();
     @FXML
     private TextField usernameTextField;
     @FXML
@@ -45,6 +50,8 @@ public class userDashboardController {
     private Button logOut;
     @FXML
     private Button loanButton;
+    @FXML
+    private Label deleteAccountLabel;
     public void loanButtonOnAction(ActionEvent event) throws SQLException {
         Loan loan=new Loan(currentUser);
 //        loan.requestLoan(5000,"Personal");
@@ -85,6 +92,24 @@ public class userDashboardController {
         this.currencyDropList.setValue(currentUser.getCurrency());
         gmailText.setText(currentUser.getEmail());
         githubText.setText(currentUser.getUsername());
-
     }
+    public void deleteAccount(ActionEvent event) throws SQLException, IOException {
+        Statement statement = connectionDB.createStatement();
+        String value="SELECT COUNT(*) AS COUNT FROM loans WHERE user_id='" + currentUser.getId() + "';";
+        String deleteUser="DELETE FROM users WHERE id = '"+currentUser.getId()+"'";
+        ResultSet result = statement.executeQuery(value);
+        if (result.next()){
+            int numOfLoans=result.getInt("COUNT");
+            if (numOfLoans>0) {
+                deleteAccountLabel.setText("Can't Delete your accounts you need to pay " + numOfLoans + " loans");
+            }
+            else {
+                statement.executeUpdate(deleteUser);
+                new LoadScene("login.fxml", ((Node) event.getSource()).getScene()).createScene();
+
+            }
+        }
+    }
+
+
 }
