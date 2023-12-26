@@ -19,6 +19,7 @@ public class HelloApplication extends Application {
 //        stage.initStyle(StageStyle.UNDECORATED);
         stage.setScene(scene);
         stage.show();
+
     }
     public static void main(String[] args) throws IOException {
         launch();
