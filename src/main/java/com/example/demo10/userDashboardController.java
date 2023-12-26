@@ -5,6 +5,9 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 
@@ -18,6 +21,18 @@ public class userDashboardController {
     @FXML
     private Pane MainPane;
 
+    @FXML
+    private TextField usernameTextField;
+    @FXML
+    private TextField password;
+    @FXML
+    private TextField email;
+    @FXML
+    private ComboBox<String> currencyDropList;
+    @FXML
+    private Label gmailText;
+    @FXML
+    private Label githubText;
     @FXML
     private Pane layerOne;
     @FXML
@@ -37,6 +52,7 @@ public class userDashboardController {
     }
     public void setCurrentUser(User currentUser) {
         this.currentUser = currentUser;
+
     }
 
     public void setWelcomeText() {
@@ -53,6 +69,7 @@ public class userDashboardController {
     }
     public  void accountData(ActionEvent e){
         layerFour.toFront();
+        setUserData();
     }
     public void doLogout(ActionEvent e) throws IOException {
         new LoadScene("login.fxml",((Node) e.getSource()).getScene()).createScene();
@@ -60,5 +77,14 @@ public class userDashboardController {
     public void addOneOnAction(ActionEvent event) throws IOException {
         transation(event);
     }
+    public void setUserData(){
+        this.usernameTextField.setText(currentUser.getUsername());
+        System.out.println(currentUser.getEmail());
+        this.email.setText(currentUser.getEmail());
+        this.password.setText(currentUser.getPassword());
+        this.currencyDropList.setValue(currentUser.getCurrency());
+        gmailText.setText(currentUser.getEmail());
+        githubText.setText(currentUser.getUsername());
 
+    }
 }
