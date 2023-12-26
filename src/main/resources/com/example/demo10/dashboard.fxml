@@ -101,7 +101,7 @@
          <children>
             <Pane fx:id="MainPane" prefHeight="524.0" prefWidth="621.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <Pane fx:id="layerFour" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="524.0" prefWidth="621.0" style="-fx-background-color: white;" visible="false">
+                  <Pane fx:id="layerFour" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="524.0" prefWidth="621.0" style="-fx-background-color: white;">
                      <children>
                         <Label layoutX="14.0" layoutY="14.0" prefHeight="35.0" prefWidth="140.0" text="Account Data" textFill="#383669">
                            <font>
@@ -182,7 +182,7 @@
                         </ImageView>
                      </children>
                   </Pane>
-                  <Pane fx:id="layerThree" prefHeight="524.0" prefWidth="603.0" style="-fx-background-color: white;" visible="false">
+                  <Pane fx:id="layerThree" prefHeight="524.0" prefWidth="603.0" style="-fx-background-color: white;">
                      <children>
                         <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Change Currency" wrappingWidth="170.7265625" />
                      </children>
@@ -299,7 +299,7 @@
                         </TabPane>
                      </children>
                   </Pane>
-                  <Pane fx:id="layerOne" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="524.0" prefWidth="604.0" style="-fx-background-color: white;" visible="false">
+                  <Pane fx:id="layerOne" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="524.0" prefWidth="604.0" style="-fx-background-color: white;">
                      <children>
                         <Text fx:id="welcomeText" fill="#19409c" layoutX="23.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome" wrappingWidth="401.13671875">
                            <font>
