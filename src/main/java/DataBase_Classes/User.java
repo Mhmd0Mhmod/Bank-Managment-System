@@ -1,8 +1,13 @@
 package DataBase_Classes;
 
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
 public class User {
     private String username;
-//    private User currentUser;
+    //    private User currentUser;
     private String password;
     private String email;
     private String currency;
@@ -71,7 +76,7 @@ public class User {
         return balance;
     }
 
-    public User(int id,String username, String email, String password, String currency, String gender, String role,double balance) {
+    public User(int id, String username, String email, String password, String currency, String gender, String role, double balance) {
         this.id = id;
         this.username = username;
         this.password = password;
@@ -81,6 +86,7 @@ public class User {
         this.role = role;
         this.balance = balance;
     }
+
     public User(String username, String email, String password, String currency, String gender, String role) {
         this.username = username;
         this.password = password;
@@ -89,5 +95,28 @@ public class User {
         this.gender = gender;
         this.role = role;
         this.balance = 0;
+    }
+
+    public void refresh() {
+        DataBaseConnection Connection = new DataBaseConnection();
+        java.sql.Connection connectionDB = Connection.getConnection();
+        try {
+            Statement statement = connectionDB.createStatement();
+            String query = "SELECT * FROM users WHERE id = " + this.id + ";";
+            ResultSet result = statement.executeQuery(query);
+            result.next();
+            this.id = result.getInt("id");
+            this.setUsername(result.getString("username"));
+            this.setEmail(result.getString("email"));
+            this.setPassword(result.getString("hashed_password"));
+            this.setCurrency(result.getString("currency"));
+            this.setGender(result.getString("gender"));
+            this.setRole(result.getString("role"));
+            this.setBalance(result.getDouble("balance"));
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+
     }
 }
