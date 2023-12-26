@@ -16,54 +16,62 @@ public class Loan {
 
     private User currentUser;
 
-    public Loan( User currentUser) {
-        this.currentUser=currentUser;
+    public Loan(User currentUser) {
+        this.currentUser = currentUser;
     }
 
 
-    public void requestLoan(double amountRequested,String type) throws SQLException {
+    public boolean requestLoan(double amountRequested, String type) throws SQLException {
+        if (amountRequested > currentUser.getBalance() * 10) return false;
         Statement statement = connectionDB.createStatement();
-            String loan = "INSERT INTO `loans` (user_id,amount,paid,remaining,typeOfLoan,date_of_approval, date_of_expiry)" +
-                    "VALUES" +
-                    "('" + currentUser.getId() + "','" + amountRequested + "','" + 0 + "','"
-                    + amountRequested + "','" +  type + "','" + LocalDateTime.now() + "','" + LocalDate.now().plusYears(5) + "')";
-            int rowsAffected = statement.executeUpdate(loan);
-            if(rowsAffected==0) System.out.println("No enough balance");
-            else {
-                System.out.println("Success");
-                 currentUser.setBalance(currentUser.getBalance()+amountRequested);
-            }
-    }
-    public void payForLoan(double amountPaid,int loanID) throws SQLException {
-        Statement statement = connectionDB.createStatement();
-        String value="SELECT * FROM loans WHERE loan_id='" + loanID + "';";
-        ResultSet result = statement.executeQuery(value);
-        double remainingOfLoan=0;
-        double paidOfLoan=0;
-        double amountOfLoan=0;
-        if (result.next()){
-            amountOfLoan =  result.getDouble("amount");
-            remainingOfLoan =  result.getDouble("remaining");
-            paidOfLoan =  result.getDouble("paid");
+        String loan = "INSERT INTO `loans` (user_id,amount,paid,remaining,typeOfLoan,date_of_approval, date_of_expiry)" +
+                "VALUES" +
+                "('" + currentUser.getId() + "','" + amountRequested + "','" + 0 + "','"
+                + amountRequested + "','" + type + "','" + LocalDateTime.now() + "','" + LocalDate.now().plusYears(5) + "')";
+        int rowsAffected = statement.executeUpdate(loan);
+        if (rowsAffected == 0) return false;
+        else {
+            String updateUser = "UPDATE users SET balance =" + currentUser.getBalance() + amountRequested + "WHERE id =" + currentUser.getId() + ";";
+            statement.executeUpdate(updateUser);
+            return true;
+
         }
+    }
 
-        double balance=currentUser.getBalance();
-        System.out.println(balance);
-        System.out.println(amountOfLoan);
-        if (balance>=amountPaid){
-            //The user pays for all the loan
-            double pay=Math.min(amountPaid,amountOfLoan);
-            double newRemaining=remainingOfLoan-pay;
-            double newPaid=paidOfLoan+pay;
-            double newBalance=balance-pay;
-            currentUser.setBalance(balance-pay);
-                String updateRemainingAndPaid="UPDATE loans SET remaining = "+ newRemaining + ",paid="+ newPaid+ "WHERE loan_id=" + loanID + ";";
-                String updateBalance="UPDATE users SET balance = "+ newBalance + "WHERE id=" + currentUser.getId();
+    public String payForLoan(double amountPaid, int loanID) throws SQLException {
+        Statement statement = connectionDB.createStatement();
+        String value = "SELECT * FROM loans WHERE loan_id='" + loanID + "';";
+        ResultSet result = statement.executeQuery(value);
+        double remainingOfLoan = 0;
+        double paidOfLoan = 0;
+        double amountOfLoan = 0;
+        int user_id = 0;
+        if (result.next()) {
+            user_id = result.getInt("user_id");
+            if (user_id != currentUser.getId()) return "These Loan Not Yours";
+            amountOfLoan = result.getDouble("amount");
+            remainingOfLoan = result.getDouble("remaining");
+            paidOfLoan = result.getDouble("paid");
+            double balance = currentUser.getBalance();
+            System.out.println(balance);
+            System.out.println(amountOfLoan);
+            if (balance >= amountPaid) {
+                //The user pays for all the loan
+                double pay = Math.min(amountPaid, amountOfLoan);
+                double newRemaining = remainingOfLoan - pay;
+                double newPaid = paidOfLoan + pay;
+                double newBalance = balance - pay;
+                currentUser.setBalance(balance - pay);
+                String updateRemainingAndPaid = "UPDATE loans SET remaining = " + newRemaining + ",paid=" + newPaid + "WHERE loan_id=" + loanID + ";";
+                String updateBalance = "UPDATE users SET balance = " + newBalance + "WHERE id=" + currentUser.getId();
                 statement.executeUpdate(updateRemainingAndPaid);
                 statement.executeUpdate(updateBalance);
+                return "Process DONE! Succesfully";
+            } else {
+                return "NOT enough Balance";
             }
-        else {
-            System.out.println("No enough balance");
+        } else {
+            return "NO Loan With This ID";
         }
     }
 }
