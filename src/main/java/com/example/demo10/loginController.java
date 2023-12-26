@@ -4,7 +4,10 @@ import DataBase_Classes.LoginValidation;
 import DataBase_Classes.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 
@@ -19,6 +22,7 @@ public class loginController {
     private PasswordField passwordField;
     @FXML
     private TextField usernameTextField;
+
 
 
     public void cancelButtonOnAction() {
@@ -37,6 +41,8 @@ public class loginController {
     public void signUpButtonOnAction(ActionEvent event) throws IOException {
         new LoadScene("signup.fxml", ((Node) event.getSource()).getScene()).createScene();
     }
+
+
 
     public void aboutTheBankButtonOnAction(ActionEvent event) throws IOException {
         new LoadScene("signup.fxml", ((Node) event.getSource()).getScene()).createScene();
