@@ -28,6 +28,9 @@ public class InsertUser {
         this.checkUsername = checkValdation("username");
         this.checkEmail = checkValdation("email");
     }
+    public InsertUser(String username){
+        this.username=username;
+    }
 
     public User checkValidation() throws SQLException {
         if (checkUsername && checkEmail) {
