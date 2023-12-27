@@ -6,13 +6,14 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 public class LoadScene {
     private String resource;
     private Scene scene;
     private User user;
 
-    LoadScene(String resource, Scene scene) {
+    public LoadScene(String resource, Scene scene) {
         this.resource = resource;
         this.scene = scene;
     }
@@ -32,6 +33,11 @@ public class LoadScene {
             dh.setCurrentUser(user);
             dh.setWelcomeText();
             dh.setBalance();
+            try {
+                dh.showMoments();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
         }
         // Set and show the secondary scene on the current stage
         stage.setScene(signUpScene);

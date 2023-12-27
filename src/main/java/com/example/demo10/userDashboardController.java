@@ -23,7 +23,7 @@ import java.util.Currency;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
-public class userDashboardController implements Initializable{
+public class userDashboardController implements Initializable {
     private User currentUser;
     @FXML
     private Text welcomeText;
@@ -46,49 +46,60 @@ public class userDashboardController implements Initializable{
 
 
     public void loanButtonOnAction(ActionEvent event) throws SQLException {
-        Loan loan=new Loan(currentUser);
+        Loan loan = new Loan(currentUser);
 //        loan.requestLoan(5000,"Personal");
-        loan.payForLoan(250,2);
+        loan.payForLoan(250, 2);
     }
+
     public void setCurrentUser(User currentUser) {
         this.currentUser = currentUser;
     }
 
     public void setWelcomeText() {
-        welcomeText.setText("Welcome " + currentUser.getUsername()+" ,");
+        welcomeText.setText("Welcome " + currentUser.getUsername() + " ,");
     }
-    public  String formatCurrencyWithCode(double amount, String currencyCode) {
+
+    public String formatCurrencyWithCode(double amount, String currencyCode) {
         NumberFormat numberFormat = NumberFormat.getCurrencyInstance();
         Currency currency = Currency.getInstance(currencyCode);
         numberFormat.setCurrency(currency);
         return numberFormat.format(amount);
     }
-    public void setBalance(){
-        balanceLabel.setText(formatCurrencyWithCode(currentUser.getBalance() , currentUser.getCurrency()));
+
+    public void setBalance() {
+        balanceLabel.setText(formatCurrencyWithCode(currentUser.getBalance(), currentUser.getCurrency()));
     }
+
     @FXML
     private Label balanceLabel;
-    public void dashboard(ActionEvent event){
-        layerOne.toFront();
-        balanceLabel.setText(formatCurrencyWithCode(currentUser.getBalance() , currentUser.getCurrency()));
 
+    public void dashboard(ActionEvent event) {
+        layerOne.toFront();
+        balanceLabel.setText(formatCurrencyWithCode(currentUser.getBalance(), currentUser.getCurrency()));
+        movementTable.refresh();
     }
-    public void transation(ActionEvent event){
+
+    public void transation(ActionEvent event) {
         layerTwo.toFront();
     }
-    public void changeCurrency(ActionEvent e){
+
+    public void changeCurrency(ActionEvent e) {
         layerThree.toFront();
     }
-    public  void accountData(ActionEvent e){
+
+    public void accountData(ActionEvent e) {
         layerFour.toFront();
         setUserData();
     }
+
     public void doLogout(ActionEvent e) throws IOException {
-        new LoadScene("login.fxml",((Node) e.getSource()).getScene()).createScene();
+        new LoadScene("login.fxml", ((Node) e.getSource()).getScene()).createScene();
     }
+
     public void addOneOnAction(ActionEvent event) throws IOException {
         transation(event);
     }
+
     @FXML
     private Label gmailLabel;
     @FXML
@@ -101,7 +112,8 @@ public class userDashboardController implements Initializable{
     private PasswordField passwordPasswordField;
     @FXML
     private ComboBox<String> currencyDropList;
-    public void setUserData(){
+
+    public void setUserData() {
         this.usernameTextField.setText(currentUser.getUsername());
         this.emailTextField.setText(currentUser.getEmail());
         this.passwordPasswordField.setText(currentUser.getPassword());
@@ -109,6 +121,7 @@ public class userDashboardController implements Initializable{
         this.githubLabel.setText(currentUser.getUsername());
         this.gmailLabel.setText(currentUser.getEmail());
     }
+
     // Dashboard GUI Table
     @FXML
     private TableView<Movement> movementTable;
@@ -140,64 +153,44 @@ public class userDashboardController implements Initializable{
 
     @FXML
     private Label deleteAccountLabel;
+
     public void deleteAccount(ActionEvent event) throws SQLException, IOException {
-
-    String checkLoan="SELECT COUNT(*) AS COUNT FROM loans WHERE user_id='"+currentUser.getId()+"' AND remaining!='"+ 0+ "';";
-    String delete="delete from users where id='"+currentUser.getId()+"';";
-
-    Statement statement = connectionDB.createStatement();
-    ResultSet result = statement.executeQuery(checkLoan);
-    if (result.next()){
-        int numOfLoans=result.getInt("COUNT");
-        if (numOfLoans>0) deleteAccountLabel.setText("You can't delete your account you still need to pay " + numOfLoans + " loans");
-        else {
-
-            Alert confirmAlert = new Alert(Alert.AlertType.CONFIRMATION);
-            confirmAlert.setTitle("Confirmation Dialog");
-            confirmAlert.setHeaderText("Confirmation Needed");
-            confirmAlert.setContentText("Are you sure to delete your account?");
-            confirmAlert.showAndWait().ifPresent(response -> {
-                if (response == ButtonType.OK) {
-                    Statement statement2 = null;
-                    try {
-                        statement2 = connectionDB.createStatement();
-                    } catch (SQLException e) {
-                        throw new RuntimeException(e);
-                    }
-                    try {
-                        statement2.executeUpdate(delete);
-                    } catch (SQLException e) {
-                        throw new RuntimeException(e);
-                    }
-                }
-            });
-
+        int loans = currentUser.deleteUser();
+        if (loans != 0) {
+            AlertCreation alert = new AlertCreation("ERROR", "Can't Delete Account", "You can't delete your account you still need to pay " + loans + " loans");
+            alert.error();
+        } else {
             new LoadScene("login.fxml", ((Node) event.getSource()).getScene()).createScene();
-
-        }
         }
     }
+
     @FXML
     private Button updateButton;
+
     public void updatePassword() throws SQLException {
-    if(passwordPasswordField.getText().equals(currentUser.getPassword())){
-        deleteAccountLabel.setText("You didn't change your password");
+        if (passwordPasswordField.getText().equals(currentUser.getPassword())) {
+            deleteAccountLabel.setText("You didn't change your password");
+        } else {
+            deleteAccountLabel.setText("Your password has been changed successfully");
+            String update = "update users set hashed_password='" + passwordPasswordField.getText() + "' WHERE id='" + currentUser.getId() + "';";
+            Statement statement = connectionDB.createStatement();
+            statement.executeUpdate(update);
+            currentUser.refresh();
+        }
     }
-    else {
-        deleteAccountLabel.setText("Your password has been changed successfully");
-        String update="update users set hashed_password='"+passwordPasswordField.getText()+"' WHERE id='"+currentUser.getId()+"';";
-        Statement statement = connectionDB.createStatement();
-        statement.executeUpdate(update);
-        currentUser.refresh();
-    }
-    }
+
     @FXML
     private TextField receiverUsername;
     @FXML
     private TextField transferAmount;
+
     public void transferMoney() throws IOException, SQLException {
-        Movement movment=new Movement(currentUser,Double.parseDouble(transferAmount.getText()),receiverUsername.getText());
-        movment.transferMoney();
+        boolean reciver_validation = new InsertUser(receiverUsername.getText()).checkValdation("username");
+        if (!reciver_validation) {
+            Movement movment = new Movement(currentUser, Double.parseDouble(transferAmount.getText()), receiverUsername.getText());
+            movment.transferMoney();
+            currentUser.refresh();
+        }
     }
 
     @FXML
@@ -217,8 +210,10 @@ public class userDashboardController implements Initializable{
                 checkBalance.setText("NO Enough Balance");
             }
             withdrawAmount.setText("");
-        }
+        } else
+            new AlertCreation("Error", "Empty Fields", "Fill required Fields").error();
     }
+
     @FXML
     private TextField depositAmount;
 
@@ -228,7 +223,8 @@ public class userDashboardController implements Initializable{
             movement.deposit(Double.parseDouble(depositAmount.getText()));
             currentUser.refresh();
             depositAmount.setText("");
-        }
+        } else
+            new AlertCreation("Error", "Empty Fields", "Fill required Fields").error();
     }
 
     //Request Loan
@@ -240,6 +236,7 @@ public class userDashboardController implements Initializable{
     private Text notEnoughBalance;
     @FXML
     private Button loanRequest;
+
     public void RequestLoan(ActionEvent event) throws SQLException {
         if (!loanRequestAmount.getText().isBlank() && !loanType.getText().isBlank()) {
             Loan loan = new Loan(currentUser);
@@ -249,7 +246,7 @@ public class userDashboardController implements Initializable{
                 notEnoughBalance.setText("NOT Enough Balance");
             }
         } else {
-            notEnoughBalance.setText("Please Filed Requirments");
+            new AlertCreation("Error", "Empty Fields", "Fill required Fields").error();
         }
     }
 
@@ -265,10 +262,9 @@ public class userDashboardController implements Initializable{
         if (!loanApplyID.getText().isBlank() && !loanApplyAmount.getText().isBlank())
             noID.setText(new Loan(currentUser).payForLoan(Double.parseDouble(loanApplyAmount.getText()), Integer.parseInt(loanApplyID.getText())));
         else
-            noID.setText("Please Fill Required Filed");
+            new AlertCreation("Error", "Empty Fields", "Fill required Fields").error();
+
     }
-
-
 
 
 }

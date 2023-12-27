@@ -321,19 +321,18 @@
                         </TabPane>
                      </children>
                   </Pane>
-                  <Pane fx:id="layerOne" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="524.0" prefWidth="604.0" style="-fx-background-color: white;">
+                  <Pane fx:id="layerOne" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="524.0" prefWidth="620.0" style="-fx-background-color: white;">
                      <children>
                         <Text fx:id="welcomeText" fill="#19409c" layoutX="23.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome" wrappingWidth="401.13671875">
                            <font>
                               <Font name="System Bold Italic" size="29.0" />
                            </font></Text>
-                        <TableView fx:id="table1" layoutX="19.0" layoutY="140.0" prefHeight="265.0" prefWidth="579.0" style="-fx-background-color: #f0f0f0;">
+                        <TableView fx:id="movementTable" layoutX="19.0" layoutY="140.0" prefHeight="265.0" prefWidth="579.0" style="-fx-background-color: #f0f0f0;">
                            <columns>
-                              <TableColumn prefWidth="166.39996337890625" style="-fx-background-color: orange; -fx-border-color: black;" text="Date" />
-                              <TableColumn prefWidth="100.00003051757812" style="-fx-background-color: orange; -fx-border-color: black;" text="Type" />
-                              <TableColumn prefWidth="94.4000244140625" style="-fx-background-color: orange; -fx-border-color: black;" text="Amount" />
-                              <TableColumn prefWidth="94.39996337890625" style="-fx-background-color: orange; -fx-border-color: black;" text="Sender" />
-                              <TableColumn prefWidth="117.60009765625" style="-fx-background-color: orange; -fx-border-color: black;" text="Reciever" />
+                              <TableColumn fx:id="type" prefWidth="113.0" style="-fx-background-color: orange; -fx-border-color: black;" text="Type" />
+                              <TableColumn fx:id="amount" prefWidth="157.0" style="-fx-background-color: orange; -fx-border-color: black;" text="Amount" />
+                              <TableColumn fx:id="sender_name" prefWidth="131.66665649414062" style="-fx-background-color: orange; -fx-border-color: black;" text="Sender" />
+                              <TableColumn fx:id="reciever_name" prefWidth="168.66668701171875" style="-fx-background-color: orange; -fx-border-color: black;" text="Reciever" />
                            </columns>
                         </TableView>
                         <Text fill="#19409c" layoutX="19.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your  transactions  history :">

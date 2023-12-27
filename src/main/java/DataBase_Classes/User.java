@@ -1,12 +1,19 @@
 package DataBase_Classes;
 
+import com.example.demo10.LoadScene;
+import javafx.event.ActionEvent;
+import javafx.scene.Node;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
+
+import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
 public class User {
     private String username;
-//    private User currentUser;
+    //    private User currentUser;
     private String password;
     private String email;
     private String currency;
@@ -75,7 +82,7 @@ public class User {
         return balance;
     }
 
-    public User(int id,String username, String email, String password, String currency, String gender, String role,double balance) {
+    public User(int id, String username, String email, String password, String currency, String gender, String role, double balance) {
         this.id = id;
         this.username = username;
         this.password = password;
@@ -85,6 +92,7 @@ public class User {
         this.role = role;
         this.balance = balance;
     }
+
     public User(String username, String email, String password, String currency, String gender, String role) {
         this.username = username;
         this.password = password;
@@ -94,9 +102,11 @@ public class User {
         this.role = role;
         this.balance = 0;
     }
+
+    DataBaseConnection Connection = new DataBaseConnection();
+    java.sql.Connection connectionDB = Connection.getConnection();
+
     public void refresh() {
-        DataBaseConnection Connection = new DataBaseConnection();
-        java.sql.Connection connectionDB = Connection.getConnection();
         try {
             Statement statement = connectionDB.createStatement();
             String query = "SELECT * FROM users WHERE id = " + this.id + ";";
@@ -113,7 +123,15 @@ public class User {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+    }
 
-
+    public int deleteUser() throws SQLException, IOException {
+        String checkLoan = "SELECT COUNT(*) AS COUNT FROM loans WHERE user_id='" + this.getId() + "' AND remaining!='" + 0 + "';";
+        String delete = "delete from users where id='" + this.getId() + "';";
+        Statement statement = connectionDB.createStatement();
+        ResultSet result = statement.executeQuery(checkLoan);
+        int numOfLoans = 0;
+        if (result.next())  numOfLoans = result.getInt("COUNT");
+        return numOfLoans;
     }
 }
