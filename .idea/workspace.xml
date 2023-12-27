@@ -6,11 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="2b5edb77-daa6-4f7c-8a6b-cead86c5c33c" name="Changes" comment="Finishing...">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo10/SplashScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo10/SplashScreenController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo10/aboutBankController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo10/aboutBankController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo10/loginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo10/loginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/demo10/aboutBank.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/demo10/aboutBank.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/demo10/dashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/demo10/dashboard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo10/signUpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo10/signUpController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -216,6 +212,7 @@
       <workItem from="1703579670637" duration="4753000" />
       <workItem from="1703585634473" duration="2018000" />
       <workItem from="1703707117621" duration="651000" />
+      <workItem from="1703712300428" duration="437000" />
     </task>
     <task id="LOCAL-00001" summary="Update done">
       <option name="closed" value="true" />

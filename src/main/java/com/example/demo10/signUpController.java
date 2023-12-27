@@ -94,7 +94,7 @@ public class signUpController {
                 , currencyComboBox.getValue(), gen.getText());
         User user = insertUser.checkValidation();
         if (!user.equals(null)) {
-            new LoadScene("dashboard.fxml", ((Node) event.getSource()).getScene(), user).createScene();
+            new LoadScene("login.fxml", ((Node) event.getSource()).getScene(), user).createScene();
         } else {
             termsLabel.setText("Change Your Username OR Email");
         }
