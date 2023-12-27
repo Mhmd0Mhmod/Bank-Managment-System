@@ -173,6 +173,7 @@ public class userDashboardController implements Initializable {
             AlertCreation alert = new AlertCreation("ERROR", "Can't Delete Account", "You can't delete your account you still need to pay " + loans + " loans");
             alert.error();
         } else {
+
             new LoadScene("login.fxml", ((Node) event.getSource()).getScene()).createScene();
         }
     }
@@ -202,23 +203,36 @@ public class userDashboardController implements Initializable {
     public void transferMoney() throws IOException, SQLException {
         if (!receiverUsername.getText().isEmpty() && !transferAmount.getText().isEmpty()) {
             boolean reciver_validation = new InsertUser(receiverUsername.getText()).checkValdation("username");
-            if (!reciver_validation) {
+            if (Double.parseDouble(transferAmount.getText()) > currentUser.getBalance()) {
+                new AlertCreation("Error", "You don't have enough money", "").error();
+            } else if (!reciver_validation) {
                 Movement movment = new Movement(currentUser, Double.parseDouble(transferAmount.getText()), receiverUsername.getText());
                 movment.transferMoney();
                 currentUser.refresh();
                 transferLabel.setTextFill(Color.GREEN);
                 transferLabel.setAlignment(Pos.CENTER);
                 transferLabel.setText("DONE! Successfully");
-            }else
+                receiverUsername.setText("");
+                transferAmount.setText("");
+            } else {
+                transferLabel.setText("");
                 new AlertCreation("Error", "NO such Such user With this Name", "").error();
-        } else
+                receiverUsername.setText("");
+                transferAmount.setText("");
+            }
+        } else {
+            transferLabel.setText("");
             new AlertCreation("Error", "Empty Fields", "Fill required Fields").error();
+            receiverUsername.setText("");
+            transferAmount.setText("");
+        }
+
     }
 
     @FXML
     private TextField withdrawAmount;
     @FXML
-    private Text checkBalance;
+    private Label withdrawLabel;
 
     public void withdraw(ActionEvent event) {
         if (!withdrawAmount.getText().isBlank()) {
@@ -228,8 +242,11 @@ public class userDashboardController implements Initializable {
                 Movement move = new Movement(currentUser);
                 move.withdraw(withdrawAmountVal);
                 currentUser.refresh();
+                withdrawLabel.setTextFill(Color.GREEN);
+                withdrawLabel.setAlignment(Pos.CENTER);
+                withdrawLabel.setText("WithDraw Done Successfully");
             } else {
-                checkBalance.setText("NO Enough Balance");
+                withdrawLabel.setText("NO Enough Balance");
             }
             withdrawAmount.setText("");
         } else
@@ -238,6 +255,8 @@ public class userDashboardController implements Initializable {
 
     @FXML
     private TextField depositAmount;
+    @FXML
+    private Label depositLabel;
 
     public void deposit(ActionEvent event) {
         if (!depositAmount.getText().isBlank()) {
@@ -245,6 +264,10 @@ public class userDashboardController implements Initializable {
             movement.deposit(Double.parseDouble(depositAmount.getText()));
             currentUser.refresh();
             depositAmount.setText("");
+            depositLabel.setTextFill(Color.GREEN);
+            depositLabel.setAlignment(Pos.CENTER);
+            depositLabel.setText("Deposit Done Successfully");
+
         } else
             new AlertCreation("Error", "Empty Fields", "Fill required Fields").error();
     }

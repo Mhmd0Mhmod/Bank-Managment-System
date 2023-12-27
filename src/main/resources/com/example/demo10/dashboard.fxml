@@ -359,8 +359,8 @@
                                  <content>
                                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #f0f0f0;">
                                        <children>
-                                          <TextField fx:id="withdrawAmount" layoutX="115.0" layoutY="56.0" promptText="amount" style="-fx-background-color: white; -fx-background-radius: 20px 20px 20px 20px;" />
-                                          <Text layoutX="26.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Amount :" wrappingWidth="87.53546142578125">
+                                          <TextField fx:id="withdrawAmount" layoutX="144.0" layoutY="55.0" promptText="amount" style="-fx-background-color: white; -fx-background-radius: 20px 20px 20px 20px;" />
+                                          <Text layoutX="27.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Amount :" wrappingWidth="87.53546142578125">
                                              <font>
                                                 <Font size="16.0" />
                                              </font>
@@ -370,7 +370,6 @@
                                                 <Font name="System Bold Italic" size="13.0" />
                                              </font></Button>
                                           <Label fx:id="withdrawLabel" layoutX="144.0" layoutY="162.0" prefHeight="18.0" prefWidth="266.0" />
-                                          <Text fx:id="checkBalance" fill="#fc0505" layoutX="190.0" layoutY="245.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="205.33673095703125" />
                                        </children>
                                     </AnchorPane>
                                  </content>
@@ -379,7 +378,7 @@
                         </TabPane>
                      </children>
                   </Pane>
-                  <Pane fx:id="layerOne" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="524.0" prefWidth="650.0" style="-fx-background-color: white;">
+                  <Pane fx:id="layerOne" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="524.0" prefWidth="650.0" style="-fx-background-color: white;" visible="false">
                      <children>
                         <Text fx:id="welcomeText" fill="#19409c" layoutX="23.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome" wrappingWidth="401.13671875">
                            <font>
