@@ -15,7 +15,7 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo10.signUpController">
    <bottom>
-      <AnchorPane onMouseClicked="#backToLgoin" prefHeight="522.0" prefWidth="638.0" style="-fx-background-color: #383669;" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="522.0" prefWidth="638.0" style="-fx-background-color: #383669;" BorderPane.alignment="CENTER">
          <children>
             <Label fx:id="uniqueEmailLabel" layoutX="193.0" layoutY="109.0" prefHeight="18.0" prefWidth="118.0" textFill="#ff0d0d" />
             <Label layoutX="188.0" layoutY="76.0" prefHeight="20.0" prefWidth="43.0" text="Email" textFill="WHITE">
@@ -118,11 +118,21 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
-            <Label fx:id="termsLabel" layoutX="225.0" layoutY="483.0" prefHeight="28.0" prefWidth="168.0" text="Already have an account" textFill="WHITE">
+            <Label layoutX="225.0" layoutY="483.0" prefHeight="28.0" prefWidth="168.0" text="Already have an account" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
+            <Label fx:id="termsLabel2" layoutX="237.0" layoutY="402.0" prefHeight="28.0" prefWidth="168.0" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Button fx:id="exitButton" layoutX="602.0" layoutY="2.0" mnemonicParsing="false" onAction="#cancelButtonOnAction" onMouseEntered="#handleMouseEnter" onMouseExited="#handleMouseExit" prefHeight="22.0" prefWidth="35.0" style="-fx-background-color: transparent;" text="X" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
    </bottom>

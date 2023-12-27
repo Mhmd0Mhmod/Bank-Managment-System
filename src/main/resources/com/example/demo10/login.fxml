@@ -58,22 +58,22 @@
                   <Font name="System Bold Italic" size="13.0" />
                </font>
             </Button>
-            <Button fx:id="cancelButton" layoutX="30.0" layoutY="358.0" mnemonicParsing="false" onAction="#cancelButtonOnAction" prefHeight="27.0" prefWidth="166.0" style="-fx-background-color: #383669; -fx-background-radius: 5px;" text="Cancel Login" textFill="WHITE">
-               <font>
-                  <Font name="System Bold Italic" size="13.0" />
-               </font>
-            </Button>
             <Label fx:id="loginMessage" alignment="CENTER" layoutX="54.0" layoutY="182.0" prefHeight="18.0" prefWidth="286.0" textFill="#f41616" />
             <Label layoutX="19.0" layoutY="54.0" prefHeight="18.0" prefWidth="143.0" text="Sign in to continue">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font></Label>
-            <Button fx:id="aboutTheBankButton" layoutX="214.0" layoutY="358.0" mnemonicParsing="false" onAction="#aboutTheBankButtonOnAction" prefHeight="27.0" prefWidth="177.0" style="-fx-background-color: #383669; -fx-background-radius: 5px;" text="More about the bank ..." textFill="WHITE">
+            <Button fx:id="aboutTheBankButton" layoutX="108.0" layoutY="353.0" mnemonicParsing="false" onAction="#aboutTheBankButtonOnAction" prefHeight="27.0" prefWidth="177.0" style="-fx-background-color: #383669; -fx-background-radius: 5px;" text="More about the bank ..." textFill="WHITE">
                <font>
                   <Font name="System Bold Italic" size="13.0" />
                </font>
             </Button>
             <Text layoutX="81.0" layoutY="337.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Don't have an account? " wrappingWidth="141.33673095703125" />
+            <Button fx:id="exitButton" layoutX="364.0" mnemonicParsing="false" onAction="#cancelButtonOnAction" onMouseEntered="#handleMouseEnter" onMouseExited="#handleMouseExit" prefHeight="22.0" prefWidth="35.0" style="-fx-background-color: #f0f0f0;" text="X">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
    </center>

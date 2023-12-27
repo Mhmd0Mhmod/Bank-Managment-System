@@ -83,11 +83,14 @@ public class signUpController {
             if (!character.isEmpty()) { // Check if a character was typed (Shift and ctrl and empty for example)
                 // Append the character to the search query
                 searchQuery.append(character);
+                currencyComboBox.setPromptText(String.valueOf(searchQuery));
                 // Refilter the list based on the search query by choosing currencies starts with searchQuery and it's case-insensitive
                 filteredItems.setPredicate(item -> item.toUpperCase().startsWith(searchQuery.toString().toUpperCase()));
             } else if (event.getCode() == KeyCode.BACK_SPACE && searchQuery.length() > 0) {
                 // Handle backspace
                 searchQuery.deleteCharAt(searchQuery.length() - 1);
+                if (searchQuery.isEmpty()) currencyComboBox.setPromptText("Choose currency");
+                else currencyComboBox.setPromptText(String.valueOf(searchQuery));
                 filteredItems.setPredicate(item -> item.toUpperCase().startsWith(searchQuery.toString().toUpperCase()));
             }
             // Open the ComboBox popup to show the filtered items
@@ -121,6 +124,23 @@ public class signUpController {
 
     public void backToLgoin(ActionEvent event) throws IOException {
         new LoadScene("login.fxml", ((Node) event.getSource()).getScene()).createScene();
+    }
+    @FXML
+    private Button exitButton;
+    @FXML
+    public void handleMouseEnter() {
+        exitButton.setStyle("-fx-background-color: RED;");
+    }
+    @FXML
+
+    public void handleMouseExit() {
+        exitButton.setStyle("-fx-background-color: transparent;"); // Reset to default or another color
+    }
+    @FXML
+
+    public void cancelButtonOnAction() {
+        Stage stage = (Stage) exitButton.getScene().getWindow();
+        stage.close();
     }
 
 }
