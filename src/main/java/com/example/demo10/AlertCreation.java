@@ -1,9 +1,12 @@
 package com.example.demo10;
 
 import DataBase_Classes.DataBaseConnection;
+import javafx.event.ActionEvent;
+import javafx.scene.Node;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -21,7 +24,8 @@ public class AlertCreation {
         this.contentText = contentText;
     }
 
-    public void confirmation(String query) {
+    public boolean confirmation(String query, ActionEvent event) {
+        boolean okayButton=false;
         Alert confirmAlert = new Alert(Alert.AlertType.CONFIRMATION);
         confirmAlert.setTitle(title);
         confirmAlert.setHeaderText(headerText);
@@ -31,11 +35,16 @@ public class AlertCreation {
                 try {
                     Statement statement2 = connectionDB.createStatement();
                     statement2.executeUpdate(query);
-                } catch (SQLException e) {
+                    new LoadScene("login.fxml", ((Node) event.getSource()).getScene()).createScene();
+                } catch (SQLException | IOException e) {
                     throw new RuntimeException(e);
                 }
             }
+
+
         });
+        return okayButton;
+
     }
 
     public void error() {

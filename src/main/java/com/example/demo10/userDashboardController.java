@@ -173,11 +173,11 @@ public class userDashboardController implements Initializable {
             AlertCreation alert = new AlertCreation("ERROR", "Can't Delete Account", "You can't delete your account you still need to pay " + loans + " loans");
             alert.error();
         } else {
-
-            new LoadScene("login.fxml", ((Node) event.getSource()).getScene()).createScene();
+            String delete = "delete from users where id='" + currentUser.getId() + "';";
+            AlertCreation alert=new AlertCreation("Confirmation","Are you sure you want to delete your account?","");
+            alert.confirmation(delete,event);
         }
     }
-
     @FXML
     private Button updateButton;
 
@@ -314,7 +314,6 @@ public class userDashboardController implements Initializable {
             if (!s.equals("NO Loan With This ID")) {
                 if (s.equals("Process DONE! Succesfully")) {
                     noID.setTextFill(Color.GREEN);
-                    loanType.setText("");
                     loanApplyAmount.setText("");
                 } else
                     noID.setTextFill(Color.RED);

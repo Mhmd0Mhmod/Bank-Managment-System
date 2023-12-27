@@ -79,7 +79,7 @@
                   <Image url="@../../../Icons/gender.png" />
                </image>
             </ImageView>
-            <ComboBox fx:id="currencyComboBox" layoutX="276.0" layoutY="233.0" prefHeight="26.0" prefWidth="216.0" promptText="Select Currency" />
+            <ComboBox fx:id="currencyComboBox" layoutX="276.0" layoutY="233.0" prefHeight="26.0" prefWidth="216.0" promptText="Choose currency" />
             <Button fx:id="registerButton" layoutX="222.0" layoutY="432.0" mnemonicParsing="false" onAction="#registerButtonOnAction" prefHeight="37.0" prefWidth="226.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10pc;" text="Register" textFill="#383669">
                <font>
                   <Font name="System Bold Italic" size="16.0" />
@@ -113,17 +113,12 @@
                   <Font name="System Bold" size="15.0" />
                </font>
             </Button>
-            <Label fx:id="termsLabel1" layoutX="243.0" layoutY="338.0" prefHeight="28.0" prefWidth="183.0" textFill="#ffbd00">
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-            </Label>
             <Label layoutX="225.0" layoutY="483.0" prefHeight="28.0" prefWidth="168.0" text="Already have an account" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
-            <Label fx:id="termsLabel2" layoutX="237.0" layoutY="402.0" prefHeight="28.0" prefWidth="168.0" textFill="WHITE">
+            <Label fx:id="termsLabel" layoutX="205.0" layoutY="400.0" prefHeight="28.0" prefWidth="297.0" textFill="#e80505">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
@@ -133,6 +128,26 @@
                   <Font name="System Bold" size="16.0" />
                </font>
             </Button>
+            <Label fx:id="emailLabel" layoutX="500.0" layoutY="73.0" prefHeight="30.0" prefWidth="134.0" textFill="#ee0000">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="usernameLabel" layoutX="500.0" layoutY="123.0" prefHeight="30.0" prefWidth="132.0" textFill="#f50101">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="passwordLabel" layoutX="500.0" layoutY="178.0" prefHeight="30.0" prefWidth="137.0" textFill="RED">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="currencyLabel" layoutX="499.0" layoutY="231.0" prefHeight="30.0" prefWidth="139.0" textFill="#ee0303">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
    </bottom>
