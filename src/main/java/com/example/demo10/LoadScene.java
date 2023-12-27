@@ -31,6 +31,7 @@ public class LoadScene {
             userDashboardController dh = fxmlLoader.getController();
             dh.setCurrentUser(user);
             dh.setWelcomeText();
+            dh.setBalance();
         }
         // Set and show the secondary scene on the current stage
         stage.setScene(signUpScene);

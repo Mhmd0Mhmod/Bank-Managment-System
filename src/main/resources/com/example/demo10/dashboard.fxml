@@ -132,7 +132,7 @@
                         <TextField fx:id="usernameTextField" layoutX="212.0" layoutY="69.0" prefHeight="25.0" prefWidth="205.0" promptText="username" />
                         <PasswordField fx:id="passwordPasswordField" layoutX="212.0" layoutY="183.0" prefHeight="25.0" prefWidth="211.0" promptText="********" />
                         <ComboBox fx:id="currencyDropList" layoutX="211.0" layoutY="243.0" prefWidth="150.0" promptText="EGP" />
-                        <Button layoutX="107.0" layoutY="339.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="153.0" style="-fx-background-color: #ffffffff; -fx-border-color: #000000; -fx-border-radius: 10px;" text="Update" />
+                        <Button fx:id="updateButton" layoutX="107.0" layoutY="339.0" mnemonicParsing="false" onAction="#updatePassword" prefHeight="27.0" prefWidth="153.0" style="-fx-background-color: #ffffffff; -fx-border-color: #000000; -fx-border-radius: 10px;" text="Update" />
                         <Button layoutX="341.0" layoutY="339.0" mnemonicParsing="false" onAction="#deleteAccount" prefHeight="27.0" prefWidth="153.0" style="-fx-background-color: #ffffffff; -fx-border-color: #000000; -fx-border-radius: 10px;" text="Delete Account" />
                         <ImageView fitHeight="35.0" fitWidth="47.0" layoutX="71.0" layoutY="461.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -180,7 +180,7 @@
                               <Image url="@../../../Icons/currency2.png" />
                            </image>
                         </ImageView>
-                        <TextField fx:id="emailTextField" layoutX="208.0" layoutY="127.0" prefHeight="25.0" prefWidth="215.0" />
+                        <TextField fx:id="emailTextField" layoutX="208.0" layoutY="127.0" prefHeight="25.0" prefWidth="215.0" promptText="someone@example.com" />
                         <Label fx:id="deleteAccountLabel" layoutX="100.0" layoutY="380.0" prefHeight="20.0" prefWidth="418.0" textFill="#ea0b0b">
                            <font>
                               <Font size="14.0" />
@@ -200,136 +200,166 @@
                               <Font name="Lucida Handwriting Italic" size="22.0" />
                            </font></Text>
                         <TabPane layoutX="10.0" layoutY="86.0" prefHeight="391.0" prefWidth="599.0" tabClosingPolicy="UNAVAILABLE">
-                          <tabs>
-                            <Tab fx:id="loan" text="               Loan               ">
-                              <content>
-                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <tabs>
+                              <Tab fx:id="loanTab" style="-fx-background-color: orange; -fx-border-color: black;" text="             Loan             ">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-border-color: black; -fx-background-color: #f0f0f0;">
                                        <children>
                                           <Text layoutX="14.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="For Loan Request :" wrappingWidth="162.73553466796875">
                                              <font>
                                                 <Font name="System Bold" size="18.0" />
                                              </font>
                                           </Text>
-                                          <TextField fx:id="loanRequestAmount" layoutX="101.0" layoutY="66.0" promptText="enter amount to request" style="-fx-background-color: white; -fx-border-color: black;" />
+                                          <TextField fx:id="loanRequestAmount" layoutX="101.0" layoutY="66.0" promptText="enter amount to request" style="-fx-background-color: white; -fx-background-radius: 20px;" />
                                           <Text layoutX="23.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Amount :" wrappingWidth="77.93548583984375">
                                              <font>
                                                 <Font size="16.0" />
                                              </font>
                                           </Text>
-                                          <Button fx:id="loanRequest" layoutX="195.0" layoutY="126.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="209.0" style="-fx-background-color: #383669;" text="Request" textFill="WHITE" />
+                                          <Button fx:id="loanRequest" layoutX="195.0" layoutY="126.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="209.0" style="-fx-background-color: #383669; -fx-background-radius: 20px;" text="Request" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold Italic" size="13.0" />
+                                             </font></Button>
                                           <Text layoutX="14.0" layoutY="201.0" strokeType="OUTSIDE" strokeWidth="0.0" text="For Loan Pay :" wrappingWidth="162.73553466796875">
                                              <font>
                                                 <Font name="System Bold" size="18.0" />
                                              </font>
                                           </Text>
                                           <Line endX="299.20001220703125" endY="1.52587890625E-5" layoutX="300.0" layoutY="157.0" startX="-300.0" startY="1.52587890625E-5" />
-                                          <TextField fx:id="loanApplyID" layoutX="92.0" layoutY="221.0" promptText="enter id" style="-fx-background-color: white; -fx-border-color: black;" />
+                                          <TextField fx:id="loanApplyID" layoutX="92.0" layoutY="221.0" promptText="enter id" style="-fx-background-color: white; -fx-background-radius: 20px;" />
                                           <Text layoutX="14.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Loan ID :" wrappingWidth="77.93548583984375">
                                              <font>
                                                 <Font size="16.0" />
                                              </font>
                                           </Text>
-                                          <TextField fx:id="loanApplyAmount" layoutX="92.0" layoutY="257.0" promptText="enter amount to pay" style="-fx-background-color: white; -fx-border-color: black;" />
+                                          <TextField fx:id="loanApplyAmount" layoutX="92.0" layoutY="257.0" promptText="enter amount to pay" style="-fx-background-color: white; -fx-background-radius: 20px;" />
                                           <Text layoutX="14.0" layoutY="276.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Amount :" wrappingWidth="77.93548583984375">
                                              <font>
                                                 <Font size="16.0" />
                                              </font>
                                           </Text>
                                           <Label fx:id="loanRequestLabel" layoutX="185.0" layoutY="100.0" prefHeight="18.0" prefWidth="229.0" />
-                                          <Button fx:id="loanApply" layoutX="195.0" layoutY="318.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="209.0" style="-fx-background-color: #383669;" text="Apply" textFill="WHITE" />
+                                          <Button fx:id="loanApply" layoutX="195.0" layoutY="318.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="209.0" style="-fx-background-color: #383669; -fx-background-radius: 20px;" text="Apply" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold Italic" size="13.0" />
+                                             </font></Button>
                                           <Label fx:id="loanApplyLabel" layoutX="185.0" layoutY="292.0" prefHeight="18.0" prefWidth="229.0" />
                                        </children>
                                     </AnchorPane>
-                              </content>
-                            </Tab>
-                            <Tab fx:id="transferTab" text="transferTab">
-                              <content>
-                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="262.0" prefWidth="599.0">
+                                 </content>
+                              </Tab>
+                              <Tab fx:id="transferTab" style="-fx-background-color: orange; -fx-border-color: black;" text="             Transfer             ">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="262.0" prefWidth="599.0" style="-fx-background-color: #f0f0f0;">
                                        <children>
                                           <Text layoutX="14.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="For Transfering :" wrappingWidth="162.73553466796875">
                                              <font>
                                                 <Font name="System Bold" size="18.0" />
                                              </font>
                                           </Text>
-                                          <TextField fx:id="receiverUsername" layoutX="184.0" layoutY="87.0" promptText="username" style="-fx-background-color: white; -fx-border-color: black;" />
+                                          <TextField fx:id="receiverUsername" layoutX="184.0" layoutY="87.0" promptText="username" style="-fx-background-color: white; -fx-background-radius: 20px;" />
                                           <Text layoutX="32.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reciever UserName :" wrappingWidth="180.33544921875">
                                              <font>
                                                 <Font size="16.0" />
                                              </font>
                                           </Text>
-                                          <TextField fx:id="transferAmount" layoutX="107.0" layoutY="138.0" promptText="amount" style="-fx-background-color: white; -fx-border-color: black;" />
+                                          <TextField fx:id="transferAmount" layoutX="107.0" layoutY="138.0" promptText="amount" style="-fx-background-color: white; -fx-background-radius: 20px;" />
                                           <Text layoutX="32.0" layoutY="157.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Amount :" wrappingWidth="87.53546142578125">
                                              <font>
                                                 <Font size="16.0" />
                                              </font>
                                           </Text>
-                                          <Button fx:id="transferButton" layoutX="195.0" layoutY="241.0" mnemonicParsing="false" onAction="#transferMoney" prefHeight="26.0" prefWidth="209.0" style="-fx-background-color: #383669;" text="Send Now" textFill="WHITE" />
+                                          <Button fx:id="transferButton" layoutX="195.0" layoutY="241.0" mnemonicParsing="false" onAction="#transferMoney" prefHeight="26.0" prefWidth="209.0" style="-fx-background-color: #383669; -fx-background-radius: 20px;" text="Send Now" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold Italic" size="13.0" />
+                                             </font></Button>
                                           <Label fx:id="transferLabel" layoutX="118.0" layoutY="203.0" prefHeight="18.0" prefWidth="363.0" />
                                        </children>
                                     </AnchorPane>
-                              </content>
-                            </Tab>
-                              <Tab fx:id="depositTab" text="depositTab">
+                                 </content>
+                              </Tab>
+                              <Tab fx:id="depositTab" style="-fx-background-color: orange; -fx-border-color: black;" text="             Deposit             ">
                                  <content>
-                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #f0f0f0;">
                                        <children>
-                                          <TextField fx:id="depositAmount" layoutX="126.0" layoutY="44.0" promptText="amount" style="-fx-background-color: white; -fx-border-color: black;" />
+                                          <TextField fx:id="depositAmount" layoutX="114.0" layoutY="47.0" promptText="amount" style="-fx-background-color: white; -fx-background-radius: 20px 20px 20px 20px;" />
                                           <Text layoutX="26.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Amount :" wrappingWidth="87.53546142578125">
                                              <font>
                                                 <Font size="16.0" />
                                              </font>
                                           </Text>
-                                          <Button fx:id="deposit" layoutX="173.0" layoutY="190.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="209.0" style="-fx-background-color: #383669;" text="Deposit Now" textFill="WHITE" />
+                                          <Button fx:id="deposit" layoutX="173.0" layoutY="190.0" mnemonicParsing="false" onAction="#deposit" prefHeight="26.0" prefWidth="209.0" style="-fx-background-color: #383669; -fx-background-radius: 20px;" text="Deposit Now" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold Italic" size="13.0" />
+                                             </font></Button>
                                           <Label fx:id="depositLabel" layoutX="144.0" layoutY="162.0" prefHeight="18.0" prefWidth="266.0" />
                                        </children>
                                     </AnchorPane>
                                  </content>
                               </Tab>
-                              <Tab fx:id="withdrawTab" text="withdrawTab">
+                              <Tab fx:id="withdrawlTab" style="-fx-background-color: orange; -fx-border-color: black;" text="             Withdrawl             ">
                                  <content>
-                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #f0f0f0;">
                                        <children>
-                                          <TextField fx:id="withdrawAmount" layoutX="126.0" layoutY="44.0" promptText="amount" style="-fx-background-color: white; -fx-border-color: black;" />
+                                          <TextField fx:id="withdrawAmount" layoutX="115.0" layoutY="56.0" promptText="amount" style="-fx-background-color: white; -fx-background-radius: 20px 20px 20px 20px;" />
                                           <Text layoutX="26.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Amount :" wrappingWidth="87.53546142578125">
                                              <font>
                                                 <Font size="16.0" />
                                              </font>
                                           </Text>
-                                          <Button fx:id="withdraw" layoutX="173.0" layoutY="190.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="209.0" style="-fx-background-color: #383669;" text="Deposit Now" textFill="WHITE" />
+                                          <Button fx:id="withdraw" layoutX="173.0" layoutY="190.0" mnemonicParsing="false" onAction="#withdraw" prefHeight="26.0" prefWidth="209.0" style="-fx-background-color: #383669; -fx-background-radius: 20px;" text="Withdrawl Now" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold Italic" size="13.0" />
+                                             </font></Button>
                                           <Label fx:id="withdrawLabel" layoutX="144.0" layoutY="162.0" prefHeight="18.0" prefWidth="266.0" />
+                                          <Text fx:id="checkBalance" fill="#fc0505" layoutX="190.0" layoutY="245.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="205.33673095703125" />
                                        </children>
                                     </AnchorPane>
                                  </content>
                               </Tab>
-                          </tabs>
+                           </tabs>
                         </TabPane>
                      </children>
                   </Pane>
-                  <Pane fx:id="layerOne" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="524.0" prefWidth="604.0" style="-fx-background-color: white;" visible="false">
+                  <Pane fx:id="layerOne" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="524.0" prefWidth="604.0" style="-fx-background-color: white;">
                      <children>
                         <Text fx:id="welcomeText" fill="#19409c" layoutX="23.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome" wrappingWidth="401.13671875">
                            <font>
                               <Font name="System Bold Italic" size="29.0" />
                            </font></Text>
-                        <TableView fx:id="table1" layoutX="19.0" layoutY="140.0" prefHeight="265.0" prefWidth="579.0" style="-fx-background-color: gray;">
-                          <columns>
-                            <TableColumn prefWidth="176.79998779296875" text="Date" />
-                            <TableColumn prefWidth="95.99993896484375" text="Type" />
-                              <TableColumn prefWidth="94.39996337890625" text="Amount" />
-                              <TableColumn prefWidth="97.5999755859375" text="Sender" />
-                              <TableColumn prefWidth="113.39996337890625" text="Reciever" />
-                          </columns>
+                        <TableView fx:id="table1" layoutX="19.0" layoutY="140.0" prefHeight="265.0" prefWidth="579.0" style="-fx-background-color: #f0f0f0;">
+                           <columns>
+                              <TableColumn prefWidth="166.39996337890625" style="-fx-background-color: orange; -fx-border-color: black;" text="Date" />
+                              <TableColumn prefWidth="100.00003051757812" style="-fx-background-color: orange; -fx-border-color: black;" text="Type" />
+                              <TableColumn prefWidth="94.4000244140625" style="-fx-background-color: orange; -fx-border-color: black;" text="Amount" />
+                              <TableColumn prefWidth="94.39996337890625" style="-fx-background-color: orange; -fx-border-color: black;" text="Sender" />
+                              <TableColumn prefWidth="117.60009765625" style="-fx-background-color: orange; -fx-border-color: black;" text="Reciever" />
+                           </columns>
                         </TableView>
                         <Text fill="#19409c" layoutX="19.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your  transactions  history :">
                            <font>
-                              <Font name="Adca" size="21.0" />
+                              <Font name="Arista Pro Trial Bold" size="21.0" />
                            </font>
                         </Text>
                         <Button layoutX="226.0" layoutY="434.0" mnemonicParsing="false" onAction="#addOneOnAction" prefHeight="35.0" prefWidth="152.0" style="-fx-background-color: #383669; -fx-background-radius: 15px 15px 15px 15px;" text="Add new one ..." textFill="WHITE">
                            <opaqueInsets>
                               <Insets />
                            </opaqueInsets>
+                           <font>
+                              <Font name="System Bold Italic" size="12.0" />
+                           </font>
                         </Button>
+                        <Label fx:id="balanceLabel" layoutX="424.0" layoutY="56.0" prefHeight="34.0" prefWidth="175.0" text="Label" textFill="#19409c">
+                           <font>
+                              <Font name="System Bold Italic" size="23.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="balanceLabel1" layoutX="424.0" layoutY="26.0" prefHeight="34.0" prefWidth="157.0" text="Your Balance" textFill="#19409c">
+                           <font>
+                              <Font name="System Bold Italic" size="23.0" />
+                           </font>
+                        </Label>
+
                      </children>
                   </Pane>
                </children>
