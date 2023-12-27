@@ -23,7 +23,5 @@ public class HelloApplication extends Application {
     }
     public static void main(String[] args) throws IOException {
         launch();
-        currencyChangeAPI api=new currencyChangeAPI();
-//        System.out.println(api.sendHttpGETRequest("USD","EGP",50));
     }
 }

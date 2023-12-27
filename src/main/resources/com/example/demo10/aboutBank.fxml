@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TitledPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -8,12 +9,11 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="434.0" prefWidth="604.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo10.aboutBankController">
    <children>
-      <Accordion prefHeight="400.0" prefWidth="600.0">
+      <Accordion prefHeight="382.0" prefWidth="600.0">
         <panes>
-          <TitledPane animated="false" text="History" textFill="#001eff">
+          <TitledPane animated="false" text="History" textFill="#383669">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #6a717a;">
                      <children>
@@ -30,8 +30,11 @@
                      </children>
                   </AnchorPane>
             </content>
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font>
           </TitledPane>
-          <TitledPane animated="false" text="Board Members" textFill="#001eff">
+          <TitledPane animated="false" text="Board Members" textFill="#383669">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #6a717a;">
                      <children>
@@ -78,10 +81,13 @@
                      </children>
                   </AnchorPane>
             </content>
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font>
           </TitledPane>
-          <TitledPane animated="false" prefWidth="600.0" text="Awards" textFill="#001eff">
+          <TitledPane animated="false" prefHeight="285.0" prefWidth="600.0" text="Awards" textFill="#383669">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #6a717a;">
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="314.0" prefWidth="598.0" style="-fx-background-color: #6a717a;">
                      <children>
                         <Text fill="#bd7613" layoutX="14.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bank’s Awards of 2022">
                            <font>
@@ -116,8 +122,16 @@
                      </children>
                   </AnchorPane>
             </content>
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font>
           </TitledPane>
         </panes>
       </Accordion>
+      <Button fx:id="backToLoginButton" layoutX="250.0" layoutY="388.0" mnemonicParsing="false" onAction="#returnToLogin" prefHeight="31.0" prefWidth="121.0" style="-fx-background-color: #383669; -fx-background-radius: 20px;" text="Back To Login" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
