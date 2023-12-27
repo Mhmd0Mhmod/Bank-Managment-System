@@ -5,11 +5,14 @@ import javafx.beans.binding.Bindings;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
+import javafx.scene.text.TextAlignment;
 
 import java.io.IOException;
 import java.net.URL;
@@ -76,10 +79,11 @@ public class userDashboardController implements Initializable {
     @FXML
     private Label balanceLabel;
 
-    public void dashboard(ActionEvent event) {
+    public void dashboard(ActionEvent event) throws SQLException {
         layerOne.toFront();
-        balanceLabel.setText(formatCurrencyWithCode(currentUser.getBalance(), currentUser.getCurrency()));
-        movementTable.refresh();
+        setBalance();
+        movementTable.getItems().clear();
+        showMoments();
     }
 
     public void transation(ActionEvent event) {
@@ -88,6 +92,8 @@ public class userDashboardController implements Initializable {
 
     public void changeCurrency(ActionEvent e) {
         layerThree.toFront();
+        initializeComboBox();
+        dateUpdateLabel.setText(String.valueOf(LocalDate.now()));
     }
 
     public void accountData(ActionEvent e) {
@@ -143,13 +149,14 @@ public class userDashboardController implements Initializable {
         sender_name.setCellValueFactory(new PropertyValueFactory<Movement, String>("sender_name"));
         reciever_name.setCellValueFactory(new PropertyValueFactory<Movement, String>("reciever_name"));
     }
+
     @FXML
     private Label dateUpdateLabel;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         initializeTable();
-        initializeComboBox();
-        dateUpdateLabel.setText(String.valueOf(LocalDate.now()));
+
     }
 
     public void showMoments() throws SQLException {
@@ -189,14 +196,23 @@ public class userDashboardController implements Initializable {
     private TextField receiverUsername;
     @FXML
     private TextField transferAmount;
+    @FXML
+    private Label transferLabel;
 
     public void transferMoney() throws IOException, SQLException {
-        boolean reciver_validation = new InsertUser(receiverUsername.getText()).checkValdation("username");
-        if (!reciver_validation) {
-            Movement movment = new Movement(currentUser, Double.parseDouble(transferAmount.getText()), receiverUsername.getText());
-            movment.transferMoney();
-            currentUser.refresh();
-        }
+        if (!receiverUsername.getText().isEmpty() && !transferAmount.getText().isEmpty()) {
+            boolean reciver_validation = new InsertUser(receiverUsername.getText()).checkValdation("username");
+            if (!reciver_validation) {
+                Movement movment = new Movement(currentUser, Double.parseDouble(transferAmount.getText()), receiverUsername.getText());
+                movment.transferMoney();
+                currentUser.refresh();
+                transferLabel.setTextFill(Color.GREEN);
+                transferLabel.setAlignment(Pos.CENTER);
+                transferLabel.setText("DONE! Successfully");
+            }else
+                new AlertCreation("Error", "NO such Such user With this Name", "").error();
+        } else
+            new AlertCreation("Error", "Empty Fields", "Fill required Fields").error();
     }
 
     @FXML
@@ -239,16 +255,21 @@ public class userDashboardController implements Initializable {
     @FXML
     private TextField loanType;
     @FXML
-    private Text notEnoughBalance;
-    @FXML
-    private Button loanRequest;
+    private Label notEnoughBalance;
 
     public void RequestLoan(ActionEvent event) throws SQLException {
         if (!loanRequestAmount.getText().isBlank() && !loanType.getText().isBlank()) {
             Loan loan = new Loan(currentUser);
             if (loan.requestLoan(Double.parseDouble(loanRequestAmount.getText()), loanType.getText())) {
+                notEnoughBalance.setTextFill(Color.GREEN);
+                notEnoughBalance.setAlignment(Pos.CENTER);
+                notEnoughBalance.setText("DONE!");
+                loanRequestAmount.setText("");
+                loanType.setText("");
                 currentUser.refresh();
             } else {
+                notEnoughBalance.setTextFill(Color.RED);
+                notEnoughBalance.setAlignment(Pos.CENTER);
                 notEnoughBalance.setText("NOT Enough Balance");
             }
         } else {
@@ -258,42 +279,53 @@ public class userDashboardController implements Initializable {
 
     // PayForLoan
     @FXML
-    private Text noID;
+    private Label noID;
     @FXML
     private TextField loanApplyID;
     @FXML
     private TextField loanApplyAmount;
 
     public void payforLoan(ActionEvent event) throws SQLException {
-        if (!loanApplyID.getText().isBlank() && !loanApplyAmount.getText().isBlank())
-            noID.setText(new Loan(currentUser).payForLoan(Double.parseDouble(loanApplyAmount.getText()), Integer.parseInt(loanApplyID.getText())));
-        else
+        if (!loanApplyID.getText().isBlank() && !loanApplyAmount.getText().isBlank()) {
+            String s = new Loan(currentUser).payForLoan(Double.parseDouble(loanApplyAmount.getText()), Integer.parseInt(loanApplyID.getText()));
+            if (!s.equals("NO Loan With This ID")) {
+                if (s.equals("Process DONE! Succesfully"))
+                    noID.setTextFill(Color.GREEN);
+                else
+                    noID.setTextFill(Color.RED);
+                noID.setAlignment(Pos.CENTER);
+                noID.setText(s);
+            } else new AlertCreation("Error", "NO such ID", "No loan has this ID").error();
+        } else
             new AlertCreation("Error", "Empty Fields", "Fill required Fields").error();
 
     }
+
     //intializing the toComboBox and fromComboBox
     @FXML
     private ComboBox<String> toComboBox;
     @FXML
     private ComboBox<String> fromComboBox;
-    SpecialTypeOfComboBox sp=new SpecialTypeOfComboBox();
+    SpecialTypeOfComboBox sp = new SpecialTypeOfComboBox();
+
     public void initializeComboBox() {
-        SpecialTypeOfComboBox sp=new SpecialTypeOfComboBox();
+        SpecialTypeOfComboBox sp = new SpecialTypeOfComboBox();
         sp.initilaize(toComboBox);
         sp.initilaize(fromComboBox);
     }
+    // handlingChangeCurrency
+
     @FXML
     private TextField amountCurrency;
     @FXML
     private Label resultText;
 
-    // handlingChangeCurrency
     public void transferCurrencies() throws IOException {
-        currencyChangeAPI api=new currencyChangeAPI();
-        String toCurrency=toComboBox.getValue();
-        String fromCurrency=fromComboBox.getValue();
-        Double amountChanged=api.convertCurrency(fromCurrency,toCurrency, Double.parseDouble(amountCurrency.getText()));
-        resultText.setText(formatCurrencyWithCode(amountChanged,toCurrency));
+        currencyChangeAPI api = new currencyChangeAPI();
+        String toCurrency = toComboBox.getValue();
+        String fromCurrency = fromComboBox.getValue();
+        Double amountChanged = api.convertCurrency(fromCurrency, toCurrency, Double.parseDouble(amountCurrency.getText()));
+        resultText.setText(formatCurrencyWithCode(amountChanged, toCurrency));
 
 
     }

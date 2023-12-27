@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2b5edb77-daa6-4f7c-8a6b-cead86c5c33c" name="Changes" comment="updated aboutBank">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/demo10/SpecialTypeOfComboBox.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo10/signUpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo10/signUpController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DataBase_Classes/Loan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataBase_Classes/Loan.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DataBase_Classes/Movement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataBase_Classes/Movement.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo10/userDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo10/userDashboardController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/demo10/dashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/demo10/dashboard.fxml" afterDir="false" />
     </list>
@@ -85,12 +85,15 @@
     <setting file="file://$PROJECT_DIR$/pom.xml" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/main/java/DataBase_Classes/DataBaseConnection.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/main/java/DataBase_Classes/InsertUser.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/DataBase_Classes/Loan.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/main/java/DataBase_Classes/LoginValidation.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/DataBase_Classes/Movement.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/main/java/DataBase_Classes/User.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/com/example/demo10/DashboardController.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/example/demo10/HelloApplication.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/main/java/com/example/demo10/LoadScene.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/main/java/com/example/demo10/loginController.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/main/java/com/example/demo10/signUpController.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/example/demo10/userDashboardController.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">

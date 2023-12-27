@@ -2,6 +2,7 @@ package DataBase_Classes;
 
 import DataBase_Classes.DataBaseConnection;
 import DataBase_Classes.User;
+import com.example.demo10.AlertCreation;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -16,8 +17,8 @@ public class Loan {
 
     private User currentUser;
 
-    public Loan( User currentUser) {
-        this.currentUser=currentUser;
+    public Loan(User currentUser) {
+        this.currentUser = currentUser;
     }
 
 
@@ -31,12 +32,13 @@ public class Loan {
         int rowsAffected = statement.executeUpdate(loan);
         if (rowsAffected == 0) return false;
         else {
-            String updateUser = "UPDATE users SET balance =" + currentUser.getBalance() + amountRequested + "WHERE id =" + currentUser.getId() + ";";
+            String updateUser = "UPDATE users SET balance =" + (currentUser.getBalance() + amountRequested) + "WHERE id =" + currentUser.getId() + ";";
+            new Movement(amountRequested, currentUser).loanRequest();
             statement.executeUpdate(updateUser);
             return true;
-
         }
     }
+
     public String payForLoan(double amountPaid, int loanID) throws SQLException {
         Statement statement = connectionDB.createStatement();
         String value = "SELECT * FROM loans WHERE loan_id='" + loanID + "';";
@@ -65,6 +67,7 @@ public class Loan {
                 String updateBalance = "UPDATE users SET balance = " + newBalance + "WHERE id=" + currentUser.getId();
                 statement.executeUpdate(updateRemainingAndPaid);
                 statement.executeUpdate(updateBalance);
+                new Movement(amountPaid, currentUser).payForLoan();
                 return "Process DONE! Succesfully";
             } else {
                 return "NOT enough Balance";

@@ -23,6 +23,11 @@ public class Movement {
         this.type = "Transaction";
     }
 
+    public Movement(double amount, User currentUser) {
+        this.amount = amount;
+        this.currentUser = currentUser;
+    }
+
     public Movement(User currentUser) {
         this.currentUser = currentUser;
     }
@@ -50,7 +55,6 @@ public class Movement {
         if (result.next()) receiverCurrency = result.getString("currency");
         result.close();
         currencyChangeAPI api = new currencyChangeAPI();
-        System.out.println(currentUser.getCurrency());
         Double amountExchanged = api.convertCurrency(currentUser.getCurrency(), receiverCurrency, amount);
         String getOldReceverBalance = "Select balance FROM users WHERE username = '" + reciever_name + "';";
         result = statement.executeQuery(getOldReceverBalance);
@@ -66,6 +70,9 @@ public class Movement {
                 + "' WHERE username='" + reciever_name + "';";
         statement.executeUpdate(updateReceiverBalance);
         statement.executeUpdate(updateSenderBalance);
+        String move = "INSERT INTO movement (movment_amount, movment_type, sender_name, reciever_name)" +
+                "VALUES" + "  ('" + amount + "','" + type + "','" + currentUser.getUsername() + "','" + reciever_name + "');";
+        statement.executeUpdate(move);
     }
 
     public void withdraw(double amount) {
@@ -115,6 +122,24 @@ public class Movement {
             userMovments.add(new Movement(result.getString("movment_type"), result.getDouble("movment_amount"), result.getString("sender_name"), result.getString("reciever_name")));
         }
         return userMovments;
+    }
+
+    public void loanRequest() throws SQLException {
+        this.type = "Loan Request";
+        Statement statement = connection.createStatement();
+        String insertMovment = "INSERT INTO movement (movment_amount, movment_type, sender_name, reciever_name)" +
+                "VALUES" +
+                "  ('" + amount + "','" + type + "','" + "Bank" + "','" + currentUser.getUsername() + "');";
+        statement.executeUpdate(insertMovment);
+    }
+
+    public void payForLoan() throws SQLException {
+        this.type = "Loan Pay";
+        Statement statement = connection.createStatement();
+        String insertMovment = "INSERT INTO movement (movment_amount, movment_type, sender_name, reciever_name)" +
+                "VALUES" +
+                "  ('" + amount + "','" + type + "','" + currentUser.getUsername() + "','" + "Bank" + "');";
+        statement.executeUpdate(insertMovment);
     }
 
     public double getAmount() {
