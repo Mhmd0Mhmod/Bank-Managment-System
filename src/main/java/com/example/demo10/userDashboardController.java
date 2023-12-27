@@ -18,6 +18,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.text.NumberFormat;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Currency;
 import java.util.Locale;
@@ -140,10 +143,13 @@ public class userDashboardController implements Initializable {
         sender_name.setCellValueFactory(new PropertyValueFactory<Movement, String>("sender_name"));
         reciever_name.setCellValueFactory(new PropertyValueFactory<Movement, String>("reciever_name"));
     }
-
+    @FXML
+    private Label dateUpdateLabel;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         initializeTable();
+        initializeComboBox();
+        dateUpdateLabel.setText(String.valueOf(LocalDate.now()));
     }
 
     public void showMoments() throws SQLException {
@@ -265,7 +271,32 @@ public class userDashboardController implements Initializable {
             new AlertCreation("Error", "Empty Fields", "Fill required Fields").error();
 
     }
+    //intializing the toComboBox and fromComboBox
+    @FXML
+    private ComboBox<String> toComboBox;
+    @FXML
+    private ComboBox<String> fromComboBox;
+    SpecialTypeOfComboBox sp=new SpecialTypeOfComboBox();
+    public void initializeComboBox() {
+        SpecialTypeOfComboBox sp=new SpecialTypeOfComboBox();
+        sp.initilaize(toComboBox);
+        sp.initilaize(fromComboBox);
+    }
+    @FXML
+    private TextField amountCurrency;
+    @FXML
+    private Label resultText;
 
+    // handlingChangeCurrency
+    public void transferCurrencies() throws IOException {
+        currencyChangeAPI api=new currencyChangeAPI();
+        String toCurrency=toComboBox.getValue();
+        String fromCurrency=fromComboBox.getValue();
+        Double amountChanged=api.convertCurrency(fromCurrency,toCurrency, Double.parseDouble(amountCurrency.getText()));
+        resultText.setText(formatCurrencyWithCode(amountChanged,toCurrency));
+
+
+    }
 
 }
 

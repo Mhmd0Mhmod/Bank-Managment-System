@@ -195,8 +195,8 @@
                               <Font name="System Bold" size="30.0" />
                            </font>
                         </Text>
-                        <ComboBox fx:id="fromComboBox" layoutX="226.0" layoutY="123.0" prefWidth="150.0" />
-                        <ComboBox fx:id="toComboBox" layoutX="226.0" layoutY="186.0" prefWidth="150.0" />
+                        <ComboBox fx:id="fromComboBox" layoutX="226.0" layoutY="123.0" prefWidth="150.0" promptText="Choose currency" />
+                        <ComboBox fx:id="toComboBox" layoutX="226.0" layoutY="186.0" prefWidth="150.0" promptText="Choose currency" />
                         <TextField fx:id="amountCurrency" layoutX="227.0" layoutY="250.0" prefHeight="25.0" prefWidth="151.0" />
                         <Label layoutX="140.0" layoutY="122.0" text="From">
                            <font>
@@ -208,7 +208,7 @@
                               <Font name="System Bold" size="18.0" />
                            </font>
                         </Label>
-                        <Button fx:id="convertButton" layoutX="226.0" layoutY="312.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="151.0" style="-fx-background-color: #383669; -fx-background-radius: 10px;" text="Convert " textFill="WHITE">
+                        <Button fx:id="convertButton" layoutX="226.0" layoutY="312.0" mnemonicParsing="false" onAction="#transferCurrencies" prefHeight="25.0" prefWidth="151.0" style="-fx-background-color: #383669; -fx-background-radius: 10px;" text="Convert " textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
@@ -218,7 +218,7 @@
                               <Font name="System Bold" size="26.0" />
                            </font>
                         </Label>
-                        <Label fx:id="resultText" layoutX="296.0" layoutY="420.0" prefHeight="34.0" prefWidth="80.0">
+                        <Label fx:id="resultText" layoutX="296.0" layoutY="420.0" prefHeight="38.0" prefWidth="168.0">
                            <font>
                               <Font name="System Bold" size="26.0" />
                            </font>
