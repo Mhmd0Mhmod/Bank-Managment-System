@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2b5edb77-daa6-4f7c-8a6b-cead86c5c33c" name="Changes" comment="currency Change API">
+    <list default="true" id="2b5edb77-daa6-4f7c-8a6b-cead86c5c33c" name="Changes" comment="Finishing...">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DataBase_Classes/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataBase_Classes/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo10/signUpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo10/signUpController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/demo10/dashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/demo10/dashboard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DataBase_Classes/Movement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataBase_Classes/Movement.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -214,6 +212,7 @@
       <workItem from="1703579670637" duration="4753000" />
       <workItem from="1703585634473" duration="2018000" />
       <workItem from="1703707117621" duration="651000" />
+      <workItem from="1703712300428" duration="437000" />
     </task>
     <task id="LOCAL-00001" summary="Update done">
       <option name="closed" value="true" />
@@ -343,15 +342,7 @@
       <option name="project" value="LOCAL" />
       <updated>1703707703751</updated>
     </task>
-    <task id="LOCAL-00017" summary="currency Change API">
-      <option name="closed" value="true" />
-      <created>1703717357213</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1703717357213</updated>
-    </task>
-    <option name="localTasksCounter" value="18" />
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -376,10 +367,10 @@
     <MESSAGE value="DashBoard Connection" />
     <MESSAGE value="new Update" />
     <MESSAGE value="userdashboard updated" />
+    <MESSAGE value="currency Change API" />
     <MESSAGE value="updated aboutBank" />
     <MESSAGE value="Finishing..." />
-    <MESSAGE value="currency Change API" />
-    <option name="LAST_COMMIT_MESSAGE" value="currency Change API" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finishing..." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
