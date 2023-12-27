@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Accordion prefHeight="400.0" prefWidth="600.0">
+        <panes>
+          <TitledPane animated="false" text="History" textFill="#001eff">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #6a717a;">
+                     <children>
+                        <Text fill="#bd7613" layoutX="14.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Monster Bank History">
+                           <font>
+                              <Font name="Lato Black" size="18.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="14.0" layoutY="59.0" lineSpacing="1.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Monster Bank (MB) was established in 1920 by the pioneer economist and financial expert Mohamed Talaat Harb Pasha, who spearheaded the concept of investing in national savings and directing them toward economic and social development. Thus, Banque Misr was established as the first wholly Egyptian-owned bank.Banque Misr has funded many businesses spanning across multiple domestic sectors, such as: textiles, insurance, transportation, aviation, entertainment, and filmmaking. Currently, BM owns shares in 157 companies across different fields, ranging from finance, tourism, housing, agriculture and food, and communication and information technology.Banque Misr has also established major investment funds in Egypt, as part of a diversified portfolio. Banque Misr was granted an award by the Global Finance Magazine as the Best Provider of Money Market Funds in Africa and the Middle East for the years 2009 and 2010; Best Provider of Money Market Funds in the Middle East for 2008, 2012, 2013, 2014, and 2015; and Best Provider of Short-Term Investments/Money Market Funds in the Middle East for the years 2015, 2016, 2017, 2018, 2020, 2021, 2022 and 2023 in Africa and the middle east for 2019." wrappingWidth="550.9367828369141">
+                           <font>
+                              <Font name="Museo300-Regular" size="13.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </TitledPane>
+          <TitledPane animated="false" text="Board Members" textFill="#001eff">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #6a717a;">
+                     <children>
+                        <Text fill="#bd7613" layoutX="14.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chairman">
+                           <font>
+                              <Font name="Lato Black" size="15.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="14.0" layoutY="46.0" lineSpacing="1.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mr. Mohamed El-Nahas is a prominent banker with a long-standing experience of more than 15 years in the banking sector.Prior to joining Banque Misr, he was the CEO and Managing Director of the Egyptian Gulf Bank from January 2013 to December 2014." wrappingWidth="382.9367218017578">
+                           <font>
+                              <Font name="Museo300-Regular" size="13.0" />
+                           </font>
+                        </Text>
+                        <ImageView fitHeight="154.0" fitWidth="200.0" layoutX="430.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../Icons/manager.png" />
+                           </image>
+                        </ImageView>
+                        <Text fill="#bd7613" layoutX="14.0" layoutY="146.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vice Chairmans">
+                           <font>
+                              <Font name="Lato Black" size="15.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="28.0" layoutY="170.0" lineSpacing="1.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1- Yazed Fekry Elkholy" wrappingWidth="148.53668212890625">
+                           <font>
+                              <Font name="Museo300-Regular" size="13.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="28.0" layoutY="200.0" lineSpacing="1.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2- Mohamed Samy Arafa." wrappingWidth="157.336669921875">
+                           <font>
+                              <Font name="Museo300-Regular" size="13.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="28.0" layoutY="230.0" lineSpacing="1.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3- Mohamed Samy Shehab." wrappingWidth="173.336669921875">
+                           <font>
+                              <Font name="Museo300-Regular" size="13.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="28.0" layoutY="260.0" lineSpacing="1.0" strokeType="OUTSIDE" strokeWidth="0.0" text="4- Mohamed Mahmoud Fathy." wrappingWidth="205.336669921875">
+                           <font>
+                              <Font name="Museo300-Regular" size="13.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </TitledPane>
+          <TitledPane animated="false" prefWidth="600.0" text="Awards" textFill="#001eff">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #6a717a;">
+                     <children>
+                        <Text fill="#bd7613" layoutX="14.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bank’s Awards of 2022">
+                           <font>
+                              <Font name="Lato Black" size="15.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="14.0" layoutY="55.0" lineSpacing="1.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Deal of the Year &quot;Islamic Finance&quot; - Africa Deal of the Year &quot;Leveraged Finance&quot; - Africa Islamic Bank of the Year - Egypt Leading position in the Top 1000 World Banks Ranking" wrappingWidth="412.5366973876953">
+                           <font>
+                              <Font name="Museo300-Regular" size="13.0" />
+                           </font>
+                        </Text>
+                        <Text fill="#bd7613" layoutX="14.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bank’s Awards of 2021">
+                           <font>
+                              <Font name="Lato Black" size="15.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="14.0" layoutY="155.0" lineSpacing="1.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Best Treasury Management Services - Egypt LinkedIn Ranking , Among the best 15 top employers - Egypt" wrappingWidth="427.73670959472656">
+                           <font>
+                              <Font name="Museo300-Regular" size="13.0" />
+                           </font>
+                        </Text>
+                        <Text fill="#bd7613" layoutX="14.0" layoutY="218.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bank’s Awards of 2020">
+                           <font>
+                              <Font name="Lato Black" size="15.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="14.0" layoutY="243.0" lineSpacing="1.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Best Service - Africa Best Service - Egypt , Euromoney Magazine Cash Management SurveyMarket Leader - Egypt" wrappingWidth="427.73670959472656">
+                           <font>
+                              <Font name="Museo300-Regular" size="13.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </TitledPane>
+        </panes>
+      </Accordion>
+   </children>
+</AnchorPane>

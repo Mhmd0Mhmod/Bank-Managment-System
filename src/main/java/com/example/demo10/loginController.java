@@ -45,7 +45,7 @@ public class loginController {
 
 
     public void aboutTheBankButtonOnAction(ActionEvent event) throws IOException {
-        new LoadScene("signup.fxml", ((Node) event.getSource()).getScene()).createScene();
+        new LoadScene("aboutBank.fxml", ((Node) event.getSource()).getScene()).createScene();
     }
 
     public void validateLogin(ActionEvent event) throws IOException {
