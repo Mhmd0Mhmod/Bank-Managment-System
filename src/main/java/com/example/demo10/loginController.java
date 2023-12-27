@@ -23,10 +23,6 @@ public class loginController {
     @FXML
     private TextField usernameTextField;
 
-
-
-
-
     public void loginButtonOnAction(ActionEvent e) throws IOException {
         if (passwordField.getText().isBlank() || usernameTextField.getText().isBlank()) {
             loginMessage.setText("Please, Enter both email and password");
