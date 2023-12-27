@@ -23,7 +23,7 @@ import java.util.Currency;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
-public class userDashboardController {
+public class userDashboardController implements Initializable{
     private User currentUser;
     @FXML
     private Text welcomeText;
@@ -110,33 +110,33 @@ public class userDashboardController {
         this.gmailLabel.setText(currentUser.getEmail());
     }
     // Dashboard GUI Table
-//    @FXML
-//    private TableView<Movement> movementTable;
-//    @FXML
-//    private TableColumn<Movement, String> type;
-//    @FXML
-//    private TableColumn<Movement, Double> amount;
-//    @FXML
-//    private TableColumn<Movement, String> sender_name;
-//    @FXML
-//    private TableColumn<Movement, String> reciever_name;
-//
-//    public void initializeTable() {
-//        type.setCellValueFactory(new PropertyValueFactory<Movement, String>("type"));
-//        amount.setCellValueFactory(new PropertyValueFactory<Movement, Double>("amount"));
-//        sender_name.setCellValueFactory(new PropertyValueFactory<Movement, String>("sender_name"));
-//        reciever_name.setCellValueFactory(new PropertyValueFactory<Movement, String>("reciever_name"));
-//    }
-//
-//    @Override
-//    public void initialize(URL location, ResourceBundle resources) {
-//        initializeTable();
-//    }
-//
-//    public void showMoments() throws SQLException {
-//        ArrayList<Movement> movments = new Movement(currentUser).movments();
-//        movementTable.getItems().addAll(movments);
-//    }
+    @FXML
+    private TableView<Movement> movementTable;
+    @FXML
+    private TableColumn<Movement, String> type;
+    @FXML
+    private TableColumn<Movement, Double> amount;
+    @FXML
+    private TableColumn<Movement, String> sender_name;
+    @FXML
+    private TableColumn<Movement, String> reciever_name;
+
+    public void initializeTable() {
+        type.setCellValueFactory(new PropertyValueFactory<Movement, String>("type"));
+        amount.setCellValueFactory(new PropertyValueFactory<Movement, Double>("amount"));
+        sender_name.setCellValueFactory(new PropertyValueFactory<Movement, String>("sender_name"));
+        reciever_name.setCellValueFactory(new PropertyValueFactory<Movement, String>("reciever_name"));
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        initializeTable();
+    }
+
+    public void showMoments() throws SQLException {
+        ArrayList<Movement> movments = new Movement(currentUser).movments();
+        movementTable.getItems().addAll(movments);
+    }
 
     @FXML
     private Label deleteAccountLabel;
@@ -231,10 +231,43 @@ public class userDashboardController {
         }
     }
 
-    @FXML
-    private Button loanRequest;
+    //Request Loan
     @FXML
     private TextField loanRequestAmount;
+    @FXML
+    private TextField loanType;
+    @FXML
+    private Text notEnoughBalance;
+    @FXML
+    private Button loanRequest;
+    public void RequestLoan(ActionEvent event) throws SQLException {
+        if (!loanRequestAmount.getText().isBlank() && !loanType.getText().isBlank()) {
+            Loan loan = new Loan(currentUser);
+            if (loan.requestLoan(Double.parseDouble(loanRequestAmount.getText()), loanType.getText())) {
+                currentUser.refresh();
+            } else {
+                notEnoughBalance.setText("NOT Enough Balance");
+            }
+        } else {
+            notEnoughBalance.setText("Please Filed Requirments");
+        }
+    }
+
+    // PayForLoan
+    @FXML
+    private Text noID;
+    @FXML
+    private TextField loanApplyID;
+    @FXML
+    private TextField loanApplyAmount;
+
+    public void payforLoan(ActionEvent event) throws SQLException {
+        if (!loanApplyID.getText().isBlank() && !loanApplyAmount.getText().isBlank())
+            noID.setText(new Loan(currentUser).payForLoan(Double.parseDouble(loanApplyAmount.getText()), Integer.parseInt(loanApplyID.getText())));
+        else
+            noID.setText("Please Fill Required Filed");
+    }
+
 
 
 

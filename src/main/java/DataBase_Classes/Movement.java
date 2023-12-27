@@ -80,7 +80,7 @@ public class Movement {
                     + " WHERE username = '" + currentUser.getUsername() + "';";
             statement.executeUpdate(updateSenderBalance);
             // put it in the table
-//            statement.executeUpdate(insertMovment);
+            statement.executeUpdate(insertMovment);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -98,7 +98,7 @@ public class Movement {
             String updateSenderBalance = "UPDATE users SET balance= " + newSenderBalance
                     + " WHERE username = '" + currentUser.getUsername() + "';";
 
-            // statement.executeUpdate(insertMovment);
+             statement.executeUpdate(insertMovment);
             statement.executeUpdate(updateSenderBalance);
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -116,7 +116,21 @@ public class Movement {
         return userMovments;
     }
 
+    public double getAmount() {
+        return amount;
+    }
 
+    public String getType() {
+        return type;
+    }
+
+    public String getSender_name() {
+        return sender_name;
+    }
+
+    public String getReciever_name() {
+        return reciever_name;
+    }
 
 
 }
