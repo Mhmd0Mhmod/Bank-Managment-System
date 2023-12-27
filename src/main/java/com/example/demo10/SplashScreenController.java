@@ -79,17 +79,13 @@ public class SplashScreenController implements Initializable {
                 Platform.runLater(new Runnable() {
                     @Override
                     public void run() {
-                        Parent root = null;
+                        //Changing the scene of the same stage by getting stage from label
                         try {
-                            root = FXMLLoader.load(getClass().getResource("login.fxml"));
+                            new LoadScene("login.fxml", ( percentagenumber.getScene())).createScene();
                         } catch (IOException e) {
                             throw new RuntimeException(e);
                         }
-                        Scene scene =new Scene(root);
-                        Stage stage = new Stage();
-                        stage.setScene(scene);
-                        stage.show();
-                        loadingScreen.getScene().getWindow().hide();
+
                     }
                 });
 

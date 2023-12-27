@@ -5,14 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2b5edb77-daa6-4f7c-8a6b-cead86c5c33c" name="Changes" comment="updated aboutBank">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/demo10/AlertCreation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DataBase_Classes/Movement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataBase_Classes/Movement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DataBase_Classes/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataBase_Classes/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo10/LoadScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo10/LoadScene.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo10/userDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo10/userDashboardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo10/SplashScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo10/SplashScreenController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo10/signUpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo10/signUpController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/demo10/dashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/demo10/dashboard.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/demo10/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/demo10/login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/demo10/splashScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/demo10/splashScreen.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,12 +86,11 @@
     <setting file="file://$PROJECT_DIR$/src/main/java/DataBase_Classes/DataBaseConnection.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/main/java/DataBase_Classes/InsertUser.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/main/java/DataBase_Classes/LoginValidation.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/DataBase_Classes/Movement.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/main/java/DataBase_Classes/User.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/example/demo10/DashboardController.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/main/java/com/example/demo10/LoadScene.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/main/java/com/example/demo10/loginController.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/main/java/com/example/demo10/signUpController.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/com/example/demo10/userDashboardController.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -180,13 +176,6 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="jdk-21.0.1-openjdk-21.0.1-249ae16d76d6-a618e4d4" />
-      </set>
-    </attachedChunks>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -215,8 +204,6 @@
       <workItem from="1703547386275" duration="4000" />
       <workItem from="1703579670637" duration="4753000" />
       <workItem from="1703585634473" duration="2018000" />
-      <workItem from="1703672637495" duration="36000" />
-      <workItem from="1703672697853" duration="657000" />
     </task>
     <task id="LOCAL-00001" summary="Update done">
       <option name="closed" value="true" />

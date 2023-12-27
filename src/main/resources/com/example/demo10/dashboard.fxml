@@ -216,7 +216,7 @@
                                                 <Font size="16.0" />
                                              </font>
                                           </Text>
-                                          <Button fx:id="loanRequest" layoutX="195.0" layoutY="126.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="209.0" style="-fx-background-color: #383669; -fx-background-radius: 20px;" text="Request" textFill="WHITE">
+                                          <Button fx:id="loanRequest" layoutX="195.0" layoutY="126.0" mnemonicParsing="false" onAction="#RequestLoan" prefHeight="26.0" prefWidth="209.0" style="-fx-background-color: #383669; -fx-background-radius: 20px;" text="Request" textFill="WHITE">
                                              <font>
                                                 <Font name="System Bold Italic" size="13.0" />
                                              </font></Button>
@@ -239,7 +239,7 @@
                                              </font>
                                           </Text>
                                           <Label fx:id="loanRequestLabel" layoutX="185.0" layoutY="100.0" prefHeight="18.0" prefWidth="229.0" />
-                                          <Button fx:id="loanApply" layoutX="195.0" layoutY="318.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="209.0" style="-fx-background-color: #383669; -fx-background-radius: 20px;" text="Apply" textFill="WHITE">
+                                          <Button fx:id="loanApply" layoutX="195.0" layoutY="318.0" mnemonicParsing="false" onAction="#payforLoan" prefHeight="26.0" prefWidth="209.0" style="-fx-background-color: #383669; -fx-background-radius: 20px;" text="Apply" textFill="WHITE">
                                              <font>
                                                 <Font name="System Bold Italic" size="13.0" />
                                              </font></Button>
@@ -321,7 +321,7 @@
                         </TabPane>
                      </children>
                   </Pane>
-                  <Pane fx:id="layerOne" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="524.0" prefWidth="620.0" style="-fx-background-color: white;">
+                  <Pane fx:id="layerOne" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="524.0" prefWidth="620.0" style="-fx-background-color: white;" visible="false">
                      <children>
                         <Text fx:id="welcomeText" fill="#19409c" layoutX="23.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome" wrappingWidth="401.13671875">
                            <font>
