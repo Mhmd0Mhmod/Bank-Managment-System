@@ -188,7 +188,7 @@
                         </Label>
                      </children>
                   </Pane>
-                  <Pane fx:id="layerThree" prefHeight="524.0" prefWidth="603.0" style="-fx-background-color: white;">
+                  <Pane fx:id="layerThree" prefHeight="524.0" prefWidth="657.0" style="-fx-background-color: white;">
                      <children>
                         <Text layoutX="180.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Change Currency" wrappingWidth="270.7265625">
                            <font>
@@ -340,7 +340,7 @@
                                  <content>
                                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #f0f0f0;">
                                        <children>
-                                          <TextField fx:id="depositAmount" layoutX="114.0" layoutY="47.0" promptText="amount" style="-fx-background-color: white; -fx-background-radius: 20px 20px 20px 20px;" />
+                                          <TextField fx:id="depositAmount" layoutX="145.0" layoutY="47.0" promptText="amount" style="-fx-background-color: white; -fx-background-radius: 20px 20px 20px 20px;" />
                                           <Text layoutX="26.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Amount :" wrappingWidth="87.53546142578125">
                                              <font>
                                                 <Font size="16.0" />
@@ -355,17 +355,17 @@
                                     </AnchorPane>
                                  </content>
                               </Tab>
-                              <Tab fx:id="withdrawlTab" style="-fx-background-color: orange; -fx-border-color: black;" text="             Withdrawl             ">
+                              <Tab fx:id="withdrawlTab" style="-fx-background-color: orange; -fx-border-color: black;" text="             Withdrawal             ">
                                  <content>
                                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #f0f0f0;">
                                        <children>
-                                          <TextField fx:id="withdrawAmount" layoutX="144.0" layoutY="55.0" promptText="amount" style="-fx-background-color: white; -fx-background-radius: 20px 20px 20px 20px;" />
-                                          <Text layoutX="27.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Amount :" wrappingWidth="87.53546142578125">
+                                          <TextField fx:id="withdrawAmount" layoutX="145.0" layoutY="47.0" promptText="amount" style="-fx-background-color: white; -fx-background-radius: 20px 20px 20px 20px;" />
+                                          <Text layoutX="26.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Amount :" wrappingWidth="87.53546142578125">
                                              <font>
                                                 <Font size="16.0" />
                                              </font>
                                           </Text>
-                                          <Button fx:id="withdraw" layoutX="173.0" layoutY="190.0" mnemonicParsing="false" onAction="#withdraw" prefHeight="26.0" prefWidth="209.0" style="-fx-background-color: #383669; -fx-background-radius: 20px;" text="Withdrawl Now" textFill="WHITE">
+                                          <Button fx:id="withdraw" layoutX="173.0" layoutY="190.0" mnemonicParsing="false" onAction="#withdraw" prefHeight="26.0" prefWidth="209.0" style="-fx-background-color: #383669; -fx-background-radius: 20px;" text="Withdrawal Now" textFill="WHITE">
                                              <font>
                                                 <Font name="System Bold Italic" size="13.0" />
                                              </font></Button>
