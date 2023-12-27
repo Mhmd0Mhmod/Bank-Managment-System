@@ -312,9 +312,11 @@ public class userDashboardController implements Initializable {
         if (!loanApplyID.getText().isBlank() && !loanApplyAmount.getText().isBlank()) {
             String s = new Loan(currentUser).payForLoan(Double.parseDouble(loanApplyAmount.getText()), Integer.parseInt(loanApplyID.getText()));
             if (!s.equals("NO Loan With This ID")) {
-                if (s.equals("Process DONE! Succesfully"))
+                if (s.equals("Process DONE! Succesfully")) {
                     noID.setTextFill(Color.GREEN);
-                else
+                    loanType.setText("");
+                    loanApplyAmount.setText("");
+                } else
                     noID.setTextFill(Color.RED);
                 noID.setAlignment(Pos.CENTER);
                 noID.setText(s);
