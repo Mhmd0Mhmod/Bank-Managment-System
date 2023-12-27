@@ -190,10 +190,62 @@
                   </Pane>
                   <Pane fx:id="layerThree" prefHeight="524.0" prefWidth="603.0" style="-fx-background-color: white;">
                      <children>
-                        <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Change Currency" wrappingWidth="170.7265625" />
+                        <Text layoutX="180.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Change Currency" wrappingWidth="270.7265625">
+                           <font>
+                              <Font name="System Bold" size="30.0" />
+                           </font>
+                        </Text>
+                        <ComboBox fx:id="fromComboBox" layoutX="226.0" layoutY="123.0" prefWidth="150.0" />
+                        <ComboBox fx:id="toComboBox" layoutX="226.0" layoutY="186.0" prefWidth="150.0" />
+                        <TextField fx:id="amountCurrency" layoutX="227.0" layoutY="250.0" prefHeight="25.0" prefWidth="151.0" />
+                        <Label layoutX="140.0" layoutY="122.0" text="From">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="152.0" layoutY="185.0" text="To">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="convertButton" layoutX="226.0" layoutY="312.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="151.0" style="-fx-background-color: #383669; -fx-background-radius: 10px;" text="Convert " textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Button>
+                        <Label layoutX="198.0" layoutY="420.0" prefHeight="37.0" prefWidth="89.0" text="Result:">
+                           <font>
+                              <Font name="System Bold" size="26.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="resultText" layoutX="296.0" layoutY="420.0" prefHeight="34.0" prefWidth="80.0">
+                           <font>
+                              <Font name="System Bold" size="26.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="129.0" layoutY="249.0" text="Amount">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="46.0" fitWidth="57.0" layoutX="125.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../Icons/currency2.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="334.0" layoutY="486.0" prefHeight="31.0" prefWidth="88.0" text="Last Updated">
+                           <font>
+                              <Font name="Arabic Typesetting" size="22.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="dateUpdateLabel" layoutX="433.0" layoutY="486.0" prefHeight="31.0" prefWidth="143.0">
+                           <font>
+                              <Font name="Arabic Typesetting" size="22.0" />
+                           </font>
+                        </Label>
                      </children>
                   </Pane>
-                  <Pane fx:id="layerTwo" prefHeight="524.0" prefWidth="622.0" style="-fx-background-color: white;">
+                  <Pane fx:id="layerTwo" prefHeight="524.0" prefWidth="622.0" style="-fx-background-color: white;" visible="false">
                      <children>
                         <Text fill="#383669" layoutX="10.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choose what you want :" wrappingWidth="301.73663330078125">
                            <font>
@@ -321,7 +373,7 @@
                         </TabPane>
                      </children>
                   </Pane>
-                  <Pane fx:id="layerOne" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="524.0" prefWidth="620.0" style="-fx-background-color: white;">
+                  <Pane fx:id="layerOne" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="524.0" prefWidth="620.0" style="-fx-background-color: white;" visible="false">
                      <children>
                         <Text fx:id="welcomeText" fill="#19409c" layoutX="23.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome" wrappingWidth="401.13671875">
                            <font>
