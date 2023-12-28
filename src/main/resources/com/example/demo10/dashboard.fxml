@@ -415,6 +415,11 @@
                               <Font name="System Bold Italic" size="23.0" />
                            </font>
                         </Label>
+                        <Button fx:id="exitButton" layoutX="622.0" layoutY="1.0" mnemonicParsing="false" onAction="#cancelButtonOnAction" onMouseEntered="#handleMouseEnter" onMouseExited="#handleMouseExit" prefHeight="22.0" prefWidth="35.0" style="-fx-background-color: #f0f0f0;" text="X">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Button>
 
                      </children>
                   </Pane>
