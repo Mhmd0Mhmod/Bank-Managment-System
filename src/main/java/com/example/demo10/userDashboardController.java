@@ -372,27 +372,7 @@ public class userDashboardController implements Initializable {
         }
 
     }
-    // Putting X up
-    @FXML
-    private Button exitButton;
 
-    @FXML
-    public void handleMouseEnter() {
-        exitButton.setStyle("-fx-background-color: RED;");
-    }
-
-    @FXML
-
-    public void handleMouseExit() {
-        exitButton.setStyle("-fx-background-color: transparent;"); // Reset to default or another color
-    }
-
-    @FXML
-
-    public void cancelButtonOnAction() {
-        Stage stage = (Stage) exitButton.getScene().getWindow();
-        stage.close();
-    }
 }
 
 
