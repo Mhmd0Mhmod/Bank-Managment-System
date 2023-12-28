@@ -181,7 +181,8 @@ public class userDashboardController implements Initializable {
         if (passwordPasswordField.getText().equals(currentUser.getPassword())) {
             deleteAccountLabel.setText("You didn't change your password");
         } else {
-            deleteAccountLabel.setText("Your password has been changed successfully");
+            new AlertCreation("Confirmation Message","Your password has been changed successfully","").information();
+            deleteAccountLabel.setText("");
             String update = "update users set hashed_password='" + passwordPasswordField.getText() + "' WHERE id='" + currentUser.getId() + "';";
             Statement statement = connectionDB.createStatement();
             statement.executeUpdate(update);
