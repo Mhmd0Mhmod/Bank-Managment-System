@@ -96,6 +96,7 @@ public class signUpController {
         if(!checkUsername) {termsLabel.setText("Username is taken"); return;}
 
         if (!valid) return;
+        if (term != null){
         InsertUser insertUser = new InsertUser(usernameTextField.getText(), emailTextField.getText(), passwordTextField.getText()
                 , currencyComboBox.getValue(), gen.getText());
         User user = insertUser.checkValidation();
@@ -109,6 +110,7 @@ public class signUpController {
             termsLabel.setText("Change Your Username OR Email");
         }
     }
+        }
 
     public void backToLgoin(ActionEvent event) throws IOException {
         new LoadScene("login.fxml", ((Node) event.getSource()).getScene()).createScene();
