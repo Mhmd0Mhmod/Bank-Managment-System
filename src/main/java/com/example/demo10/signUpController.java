@@ -83,16 +83,24 @@ public class signUpController {
         } else currencyLabel.setText("");
         RadioButton gen = (RadioButton) gender.getSelectedToggle();
         RadioButton term = (RadioButton) terms.getSelectedToggle();
-
         if (term == null)
             termsLabel.setText("You should accept our Terms first.");
         else
             termsLabel.setText("");
+        InsertUser insertUser1=new InsertUser(usernameTextField.getText(),emailTextField.getText());
+        boolean checkUsername=insertUser1.checkValdation("username");
+        boolean checkEmail=insertUser1.checkValdation("email");
+        if(!checkEmail) {termsLabel.setText("Email is taken"); return;}
+        if(!checkUsername) {termsLabel.setText("Username is taken"); return;}
+
         if (!valid) return;
-        termsLabel.setText("You have successfully register :)");
         InsertUser insertUser = new InsertUser(usernameTextField.getText(), emailTextField.getText(), passwordTextField.getText()
                 , currencyComboBox.getValue(), gen.getText());
         User user = insertUser.checkValidation();
+        AlertCreation alert=new AlertCreation("Signup Successful",null,"You have signed up successfully!");
+        alert.information();
+        termsLabel.setText("You have successfully register :)");
+
         if (!user.equals(null)) {
             new LoadScene("login.fxml", ((Node) event.getSource()).getScene(), user).createScene();
         } else {

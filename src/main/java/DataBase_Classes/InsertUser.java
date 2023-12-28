@@ -31,6 +31,10 @@ public class InsertUser {
     public InsertUser(String username){
         this.username=username;
     }
+    public InsertUser(String username,String email){
+        this.username=username;
+        this.email=email;
+    }
 
     public User checkValidation() throws SQLException {
         if (checkUsername && checkEmail) {
