@@ -13,6 +13,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
@@ -371,7 +372,27 @@ public class userDashboardController implements Initializable {
         }
 
     }
+    // Putting X up
+    @FXML
+    private Button exitButton;
 
+    @FXML
+    public void handleMouseEnter() {
+        exitButton.setStyle("-fx-background-color: RED;");
+    }
+
+    @FXML
+
+    public void handleMouseExit() {
+        exitButton.setStyle("-fx-background-color: transparent;"); // Reset to default or another color
+    }
+
+    @FXML
+
+    public void cancelButtonOnAction() {
+        Stage stage = (Stage) exitButton.getScene().getWindow();
+        stage.close();
+    }
 }
 
 
