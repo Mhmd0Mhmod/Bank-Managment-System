@@ -59,7 +59,7 @@ public class Movement {
         this.reciever_name = receiver_name;
     }
 
-    public void transferMoney() throws SQLException, IOException {
+    public Double transferMoney() throws SQLException, IOException {
         Statement statement = connection.createStatement();
         String getCurrencySQL = "SELECT currency FROM users WHERE username='" + reciever_name + "';";
         ResultSet result = statement.executeQuery(getCurrencySQL);
@@ -85,6 +85,7 @@ public class Movement {
         String move = "INSERT INTO movement (movment_amount, movment_type, sender_name, reciever_name)" +
                 "VALUES" + "  ('" + formattedAmount + "','" + type + "','" + currentUser.getUsername() + "','" + reciever_name + "');";
         statement.executeUpdate(move);
+        return amountExchanged;
     }
 
     public void withdraw(double amount) {
