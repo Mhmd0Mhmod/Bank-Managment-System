@@ -58,7 +58,8 @@ public class Loan {
             System.out.println(amountOfLoan);
             if (balance >= amountPaid) {
                 //The user pays for all the loan
-                double pay = Math.min(amountPaid, amountOfLoan);
+                if (remainingOfLoan==0) return "You have already paid for that loan";
+                double pay = Math.min(amountPaid, remainingOfLoan);
                 double newRemaining = remainingOfLoan - pay;
                 double newPaid = paidOfLoan + pay;
                 double newBalance = balance - pay;
@@ -67,7 +68,7 @@ public class Loan {
                 String updateBalance = "UPDATE users SET balance = " + newBalance + "WHERE id=" + currentUser.getId();
                 statement.executeUpdate(updateRemainingAndPaid);
                 statement.executeUpdate(updateBalance);
-                new Movement(amountPaid, currentUser).payForLoan();
+                new Movement(pay, currentUser).payForLoan();
                 return "Process DONE! Succesfully";
             } else {
                 return "NOT enough Balance";

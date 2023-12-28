@@ -51,11 +51,6 @@ public class userDashboardController implements Initializable {
     private Button loanButton;
 
 
-    public void loanButtonOnAction(ActionEvent event) throws SQLException {
-        Loan loan = new Loan(currentUser);
-//        loan.requestLoan(5000,"Personal");
-        loan.payForLoan(250, 2);
-    }
 
     public void setCurrentUser(User currentUser) {
         this.currentUser = currentUser;
@@ -207,11 +202,15 @@ public class userDashboardController implements Initializable {
                 new AlertCreation("Error", "You don't have enough money", "").error();
             } else if (!reciver_validation) {
                 Movement movment = new Movement(currentUser, Double.parseDouble(transferAmount.getText()), receiverUsername.getText());
-                movment.transferMoney();
+                double amountExchanged=movment.transferMoney();
                 currentUser.refresh();
-                transferLabel.setTextFill(Color.GREEN);
-                transferLabel.setAlignment(Pos.CENTER);
-                transferLabel.setText("DONE! Successfully");
+                new AlertCreation("Deposit sucessfully","you have transfered " +
+                        formatCurrencyWithCode(Double.parseDouble(transferAmount.getText()),currentUser.getCurrency()) + " to " + receiverUsername.getText()
+                        ,formatCurrencyWithCode(Double.parseDouble(transferAmount.getText()),currentUser.getCurrency()) +" = " +
+                        formatCurrencyWithCode(amountExchanged,currentUser.getCurrency())).information();
+//                transferLabel.setTextFill(Color.GREEN);
+//                transferLabel.setAlignment(Pos.CENTER);
+//                transferLabel.setText("DONE! Successfully");
                 receiverUsername.setText("");
                 transferAmount.setText("");
             } else {
@@ -242,11 +241,16 @@ public class userDashboardController implements Initializable {
                 Movement move = new Movement(currentUser);
                 move.withdraw(withdrawAmountVal);
                 currentUser.refresh();
-                withdrawLabel.setTextFill(Color.GREEN);
-                withdrawLabel.setAlignment(Pos.CENTER);
-                withdrawLabel.setText("WithDraw Done Successfully");
+                new AlertCreation("Withdrawed sucessfully","you have withdrawed " +
+                        formatCurrencyWithCode(Double.parseDouble(withdrawAmount.getText()),currentUser.getCurrency()) + " from your account "
+                        ,"").information();
+//                withdrawLabel.setTextFill(Color.GREEN);
+//                withdrawLabel.setAlignment(Pos.CENTER);
+//                withdrawLabel.setText("WithDraw Done Successfully");
             } else {
-                withdrawLabel.setText("NO Enough Balance");
+                new AlertCreation("Failed Withdrawal","There is no enough balance","").error();
+
+//                withdrawLabel.setText("NO Enough Balance");
             }
             withdrawAmount.setText("");
         } else
@@ -263,10 +267,13 @@ public class userDashboardController implements Initializable {
             Movement movement = new Movement(currentUser);
             movement.deposit(Double.parseDouble(depositAmount.getText()));
             currentUser.refresh();
+            new AlertCreation("Deposit sucessfully","you have deposited " +
+                    formatCurrencyWithCode(Double.parseDouble(depositAmount.getText()),currentUser.getCurrency()) + " to your account "
+                    ,"").information();
             depositAmount.setText("");
-            depositLabel.setTextFill(Color.GREEN);
-            depositLabel.setAlignment(Pos.CENTER);
-            depositLabel.setText("Deposit Done Successfully");
+//            depositLabel.setTextFill(Color.GREEN);
+//            depositLabel.setAlignment(Pos.CENTER);
+//            depositLabel.setText("Deposit Done Successfully");
 
         } else
             new AlertCreation("Error", "Empty Fields", "Fill required Fields").error();
@@ -284,16 +291,12 @@ public class userDashboardController implements Initializable {
         if (!loanRequestAmount.getText().isBlank() && !loanType.getText().isBlank()) {
             Loan loan = new Loan(currentUser);
             if (loan.requestLoan(Double.parseDouble(loanRequestAmount.getText()), loanType.getText())) {
-                notEnoughBalance.setTextFill(Color.GREEN);
-                notEnoughBalance.setAlignment(Pos.CENTER);
-                notEnoughBalance.setText("DONE!");
+                new AlertCreation("Accepted Loan","Your loan has been confirmed","").information();
                 loanRequestAmount.setText("");
                 loanType.setText("");
                 currentUser.refresh();
             } else {
-                notEnoughBalance.setTextFill(Color.RED);
-                notEnoughBalance.setAlignment(Pos.CENTER);
-                notEnoughBalance.setText("NOT Enough Balance");
+                new AlertCreation("Refused Balance","Can't confirm balance","Your balance is less than 10% of the loan").error();
             }
         } else {
             new AlertCreation("Error", "Empty Fields", "Fill required Fields").error();
@@ -311,16 +314,29 @@ public class userDashboardController implements Initializable {
     public void payforLoan(ActionEvent event) throws SQLException {
         if (!loanApplyID.getText().isBlank() && !loanApplyAmount.getText().isBlank()) {
             String s = new Loan(currentUser).payForLoan(Double.parseDouble(loanApplyAmount.getText()), Integer.parseInt(loanApplyID.getText()));
-            if (!s.equals("NO Loan With This ID")) {
+
+
+
+            if (!s.equals("NO Loan With This ID") || s.equals("You have already paid for that loan")) {
                 if (s.equals("Process DONE! Succesfully")) {
-                    noID.setTextFill(Color.GREEN);
+                    new AlertCreation("Paid Successfully",s,"").information();
+
+//                    noID.setTextFill(Color.GREEN);
                     loanApplyAmount.setText("");
-                } else
-                    noID.setTextFill(Color.RED);
-                noID.setAlignment(Pos.CENTER);
-                noID.setText(s);
-            } else new AlertCreation("Error", "NO such ID", "No loan has this ID").error();
-        } else
+                    loanApplyID.setText("");
+                } else {
+                    new AlertCreation("ERROR Message",s,"").error();
+                    loanApplyAmount.setText("");
+                    loanApplyID.setText("");
+//                    noID.setTextFill(Color.RED);
+                }
+//                noID.setAlignment(Pos.CENTER);
+//                noID.setText(s);
+            }
+            else if(s.equals("NO Loan With This ID")) new AlertCreation("Error", "NO such ID", "No loan has this ID").error();
+            else new AlertCreation("Error", s, "No loan has this ID").error();
+        }
+        else
             new AlertCreation("Error", "Empty Fields", "Fill required Fields").error();
 
     }
