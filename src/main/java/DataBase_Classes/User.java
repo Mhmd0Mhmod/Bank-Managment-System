@@ -14,7 +14,7 @@ import java.sql.Statement;
 
 public class User {
     private String username;
-    //    private User currentUser;
+
     private String password;
     private String email;
     private String currency;
