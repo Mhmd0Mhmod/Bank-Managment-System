@@ -205,9 +205,7 @@ public class userDashboardController implements Initializable {
                 double amountExchanged=movment.transferMoney();
                 currentUser.refresh();
                 new AlertCreation("Deposit sucessfully","you have transfered " +
-                        formatCurrencyWithCode(Double.parseDouble(transferAmount.getText()),currentUser.getCurrency()) + " to " + receiverUsername.getText()
-                        ,formatCurrencyWithCode(Double.parseDouble(transferAmount.getText()),currentUser.getCurrency()) +" = " +
-                        formatCurrencyWithCode(amountExchanged,currentUser.getCurrency())).information();
+                        formatCurrencyWithCode(Double.parseDouble(transferAmount.getText()),currentUser.getCurrency()) + " to " + receiverUsername.getText(),"");
 //                transferLabel.setTextFill(Color.GREEN);
 //                transferLabel.setAlignment(Pos.CENTER);
 //                transferLabel.setText("DONE! Successfully");
@@ -362,11 +360,15 @@ public class userDashboardController implements Initializable {
 
     public void transferCurrencies() throws IOException {
         currencyChangeAPI api = new currencyChangeAPI();
-        String toCurrency = toComboBox.getValue();
-        String fromCurrency = fromComboBox.getValue();
-        Double amountChanged = api.convertCurrency(fromCurrency, toCurrency, Double.parseDouble(amountCurrency.getText()));
-        resultText.setText(formatCurrencyWithCode(amountChanged, toCurrency));
-
+        if(toComboBox.getSelectionModel().getSelectedItem()==null || fromComboBox.getSelectionModel().getSelectedItem()==null || amountCurrency.getText().isEmpty()){
+            new AlertCreation("Error", "Empty Fields", "Fill required Fields").error();
+        }
+        else {
+            String toCurrency = toComboBox.getValue();
+            String fromCurrency = fromComboBox.getValue();
+            Double amountChanged = api.convertCurrency(fromCurrency, toCurrency, Double.parseDouble(amountCurrency.getText()));
+            resultText.setText(formatCurrencyWithCode(amountChanged, toCurrency));
+        }
 
     }
 

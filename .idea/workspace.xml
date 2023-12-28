@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2b5edb77-daa6-4f7c-8a6b-cead86c5c33c" name="Changes" comment="Final">
+    <list default="true" id="2b5edb77-daa6-4f7c-8a6b-cead86c5c33c" name="Changes" comment="Final Final">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DataBase_Classes/Loan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataBase_Classes/Loan.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DataBase_Classes/Movement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataBase_Classes/Movement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo10/signUpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo10/signUpController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo10/userDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo10/userDashboardController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -210,6 +209,8 @@
       <workItem from="1703712300428" duration="437000" />
       <workItem from="1703722551521" duration="2759000" />
       <workItem from="1703725327481" duration="2395000" />
+      <workItem from="1703727895077" duration="24000" />
+      <workItem from="1703748810453" duration="640000" />
     </task>
     <task id="LOCAL-00001" summary="Update done">
       <option name="closed" value="true" />
@@ -347,7 +348,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703724263550</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Final Final">
+      <option name="closed" value="true" />
+      <created>1703727908082</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1703727908082</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -376,7 +385,8 @@
     <MESSAGE value="updated aboutBank" />
     <MESSAGE value="Finishing..." />
     <MESSAGE value="Final" />
-    <option name="LAST_COMMIT_MESSAGE" value="Final" />
+    <MESSAGE value="Final Final" />
+    <option name="LAST_COMMIT_MESSAGE" value="Final Final" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

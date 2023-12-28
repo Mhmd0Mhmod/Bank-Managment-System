@@ -83,8 +83,10 @@ public class signUpController {
         } else currencyLabel.setText("");
         RadioButton gen = (RadioButton) gender.getSelectedToggle();
         RadioButton term = (RadioButton) terms.getSelectedToggle();
-        if (term == null)
+        if (term == null) {
             termsLabel.setText("You should accept our Terms first.");
+            valid =false;
+        }
         else
             termsLabel.setText("");
         InsertUser insertUser1=new InsertUser(usernameTextField.getText(),emailTextField.getText());
