@@ -13,3 +13,12 @@ The **Bank Management System** is a software application that helps banks manage
 1. Clone the repository:
    ```bash
    git clone https://github.com/Mhmd0Mhmod/Bank-Managment-System.git
+
+## Contributors
+
+The following people have contributed to the development of this project:
+
+- **(https://github.com/Mhmd0Mhmod)**
+- **(https://github.com/Shebo280)**
+- **(https://github.com/yazed7)** "The same person is **yazed2003** but there were technical problems"
+- **(https://github.com/Mohamedsami11)**
