@@ -9,3 +9,7 @@ The **Bank Management System** is a software application that helps banks manage
 - **Customer Management**: Add, update, and delete customer details. Search for customers by various filters.
 - **Reports**: Generate and export reports of transactions and account activities.
 
+## Setup and Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Mhmd0Mhmod/Bank-Managment-System.git
